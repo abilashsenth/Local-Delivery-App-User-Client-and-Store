@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "156141080251",
+    "firebase_url": "https://tuyuservices.firebaseio.com",
+    "project_id": "tuyuservices",
+    "storage_bucket": "tuyuservices.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156141080251:android:55cef17cd50e159602239e",
+        "android_client_info": {
+          "package_name": "com.tuyuservices.tuyu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156141080251:android:0b6a8afd3bf5916802239e",
+        "android_client_info": {
+          "package_name": "com.tuyuservices.tuyumain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156141080251:android:46048bf17c8d045f02239e",
+        "android_client_info": {
+          "package_name": "com.tuyuservices.tuyupartner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

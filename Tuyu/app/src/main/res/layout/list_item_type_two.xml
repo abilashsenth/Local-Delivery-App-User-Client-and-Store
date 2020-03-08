@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="200sp"
+    android:background="#c0c0c0">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/list_item_type_one_image"
+            android:text="SAMPLE"
+            android:id="@+id/list_item_type_two_text"
+            android:textColor="#000000"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:layout_weight="31"
+            android:layout_margin="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹200"
+            android:textSize="20sp"
+            android:id="@+id/list_item_type_two_price"
+            android:layout_marginLeft="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:layout_gravity="end"
+        android:id="@+id/list_display_one"
+        android:layout_margin="20sp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="100sp"
+            android:id="@+id/add_button_list"
+            android:layout_height="80sp"
+            android:text="Add"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:visibility="gone"
+        android:id="@+id/list_display_two"
+        android:layout_margin="20sp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="100sp"
+            android:id="@+id/plus_button_list"
+            android:layout_height="80sp"
+            android:text="+"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/indicator_number"/>
+        <Button
+            android:layout_width="100sp"
+            android:id="@+id/minus_button_list"
+            android:layout_height="80sp"
+            android:text="-"/>
+    </LinearLayout>
+
+</LinearLayout>

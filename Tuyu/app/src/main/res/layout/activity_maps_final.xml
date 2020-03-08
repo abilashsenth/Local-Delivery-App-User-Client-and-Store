@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MapsFinalActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:context=".MapsFinalActivity" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_weight="1"
+        android:text="Status"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:id="@+id/statustext"/>
+
+
+</LinearLayout>

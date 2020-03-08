@@ -1,0 +1,201 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tuyuservices.tuyupartner"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+11-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:5:5-81
+11-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:6:5-79
+12-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:7:5-67
+13-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:7:22-64
+14
+15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+16    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:25:5-79
+17-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:25:22-76
+18    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+18-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:5-68
+18-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:22-65
+19    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+19-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
+19-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+20-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:26:5-110
+20-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:26:22-107
+21
+22    <application
+22-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:9:5-28:19
+23        android:allowBackup="true"
+23-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:10:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/331630a23dfa1f0594bcf54d5352aa36/core-1.1.0/AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+26-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:11:9-43
+27        android:label="@string/app_name"
+27-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:12:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:13:9-54
+29        android:supportsRtl="true"
+29-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:14:9-35
+30        android:testOnly="true"
+31        android:theme="@style/AppTheme" >
+31-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:15:9-40
+32        <activity android:name="com.tuyuservices.tuyupartner.StatusResponseActivity" />
+32-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:16:9-69
+32-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:16:19-57
+33        <activity android:name="com.tuyuservices.tuyupartner.TaskActivity" />
+33-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:17:9-50
+33-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:17:19-47
+34        <activity android:name="com.tuyuservices.tuyupartner.LoginActivity" />
+34-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:18:9-51
+34-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:18:19-48
+35        <activity android:name="com.tuyuservices.tuyupartner.SplashActivity" >
+35-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:19:9-25:20
+35-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:19:19-49
+36            <intent-filter>
+36-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:20:13-24:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:21:17-69
+37-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:21:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:23:17-77
+39-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:23:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <service android:name="com.tuyuservices.tuyupartner.MyService" />
+43-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:27:9-46
+43-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/src/main/AndroidManifest.xml:27:18-43
+44        <service
+44-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:29:9-35:19
+45            android:name="com.google.firebase.components.ComponentDiscoveryService"
+45-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:30:13-84
+46            android:directBootAware="true"
+46-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+47            android:exported="false" >
+47-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:31:13-37
+48            <meta-data
+48-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:32:13-34:85
+49                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+49-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:33:17-109
+50                android:value="com.google.firebase.components.ComponentRegistrar" />
+50-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:34:17-82
+51            <meta-data
+51-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
+52                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+52-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
+53                android:value="com.google.firebase.components.ComponentRegistrar" />
+53-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
+54            <meta-data
+54-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+55                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+55-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+57        </service>
+58
+59        <receiver
+59-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+60            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+60-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+61            android:exported="true"
+61-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+62            android:permission="com.google.android.c2dm.permission.SEND" >
+62-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+63            <intent-filter>
+63-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+64                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+64-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+64-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+65            </intent-filter>
+66        </receiver>
+67
+68        <activity
+68-->[com.google.android.gms:play-services-base:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/b989d78505a527364775fcd163b70614/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+69            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+69-->[com.google.android.gms:play-services-base:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/b989d78505a527364775fcd163b70614/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+70            android:exported="false"
+70-->[com.google.android.gms:play-services-base:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/b989d78505a527364775fcd163b70614/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+71-->[com.google.android.gms:play-services-base:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/b989d78505a527364775fcd163b70614/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+72
+73        <provider
+73-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+74            android:name="com.google.firebase.provider.FirebaseInitProvider"
+74-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+75            android:authorities="com.tuyuservices.tuyupartner.firebaseinitprovider"
+75-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+76            android:exported="false"
+76-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+77            android:initOrder="100" />
+77-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+78
+79        <receiver
+79-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
+80            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+80-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
+81            android:enabled="true"
+81-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
+82            android:exported="false" >
+82-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
+83        </receiver>
+84        <receiver
+84-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
+85            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+85-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
+86            android:enabled="true"
+86-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
+87            android:exported="true"
+87-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
+88            android:permission="android.permission.INSTALL_PACKAGES" >
+88-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
+89            <intent-filter>
+89-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
+90                <action android:name="com.android.vending.INSTALL_REFERRER" />
+90-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
+90-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
+91            </intent-filter>
+92        </receiver>
+93
+94        <service
+94-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
+95            android:name="com.google.android.gms.measurement.AppMeasurementService"
+95-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
+96            android:enabled="true"
+96-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
+97            android:exported="false" />
+97-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
+98        <service
+98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
+99            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+99-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
+100            android:enabled="true"
+100-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
+101            android:exported="false"
+101-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
+102            android:permission="android.permission.BIND_JOB_SERVICE" />
+102-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
+103
+104        <meta-data
+104-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+105            android:name="com.google.android.gms.version"
+105-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+106            android:value="@integer/google_play_services_version" />
+106-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+107    </application>
+108
+109</manifest>

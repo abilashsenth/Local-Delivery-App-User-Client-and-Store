@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_weight="1"
+        android:id="@+id/recycler_view">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:id="@+id/cartViewList"
+        android:layout_gravity="bottom"
+        android:background="#c0c0c0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:id="@+id/list_mini_cart_header"
+            android:text="Cart"
+            android:layout_margin="10sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_below="@id/list_mini_cart_header"
+            android:text="Item Count"
+            android:id="@+id/list_mini_cart_Count"
+            android:layout_margin="10sp"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/list_mini_cart_header"
+            android:text="price"
+            android:id="@+id/list_mini_cart_price"
+            android:layout_margin="10sp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="cart"
+            android:id="@+id/openListCartButton"
+            android:onClick="openCart"/>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

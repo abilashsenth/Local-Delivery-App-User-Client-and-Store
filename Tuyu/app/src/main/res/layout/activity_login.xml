@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20sp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/login_bg"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_h1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/login_linear_layout_1"
+            android:layout_height="wrap_content">
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login_bar"
+                android:layout_centerInParent="true"
+                android:id="@+id/login_bar"/>
+
+
+           <EditText
+               android:layout_width="200sp"
+               android:id="@+id/number_text"
+               android:layout_height="wrap_content"
+               android:layout_centerInParent="true"
+               android:hint="Mobile Number"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login_bar"
+                android:layout_centerInParent="true"
+                android:id="@+id/name_bar"/>
+
+
+            <EditText
+                android:layout_width="200sp"
+                android:id="@+id/name_Text"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="Username"/>
+
+
+        </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/login_linear_layout_2"
+            android:layout_height="wrap_content">
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/login_bar"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/otp_bar"/>
+
+
+                <EditText
+                    android:layout_width="200sp"
+                    android:id="@+id/otp_text"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="Enter OTP"/>
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="90sp"
+            android:layout_height="100sp"
+            android:id="@+id/login_arrow"
+            android:src="@drawable/login_arrow"
+            android:onClick="loginCall"
+            android:layout_margin="20sp"/>
+
+
+    </LinearLayout>
+
+
+
+
+    
+
+</RelativeLayout>

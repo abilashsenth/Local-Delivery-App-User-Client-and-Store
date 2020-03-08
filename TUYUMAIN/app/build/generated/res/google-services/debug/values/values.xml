@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://tuyuservices.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">156141080251</string>
+    <string name="google_api_key" translatable="false">AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU</string>
+    <string name="google_app_id" translatable="false">1:156141080251:android:0b6a8afd3bf5916802239e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU</string>
+    <string name="google_storage_bucket" translatable="false">tuyuservices.appspot.com</string>
+    <string name="project_id" translatable="false">tuyuservices</string>
+</resources>
