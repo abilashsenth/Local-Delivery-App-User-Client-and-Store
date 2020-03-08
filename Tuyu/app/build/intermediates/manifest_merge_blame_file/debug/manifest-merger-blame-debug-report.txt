@@ -6,302 +6,303 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml
+8-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml
+9-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 10    <!--
 11         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
 12         Google Maps Android API v2, but you must specify either coarse or fine
 13         location permissions for the 'MyLocation' functionality.
 14    -->
 15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-15-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:9:5-79
-15-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:9:22-76
+15-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:9:5-79
+15-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:9:22-76
 16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-16-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:10:5-81
-16-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:10:22-78
+16-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:10:5-81
+16-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:10:22-78
 17    <uses-permission android:name="android.permission.INTERNET" />
-17-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:11:5-67
-17-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:11:22-64
+17-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:11:5-67
+17-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:11:22-64
 18
 19    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 20    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-21-->[com.google.firebase:firebase-firestore:21.4.0] /home/barani/.gradle/caches/transforms-2/files-2.1/7f21ac5948fa162e542842fddb32b0e7/jetified-firebase-firestore-21.4.0/AndroidManifest.xml:13:5-79
-21-->[com.google.firebase:firebase-firestore:21.4.0] /home/barani/.gradle/caches/transforms-2/files-2.1/7f21ac5948fa162e542842fddb32b0e7/jetified-firebase-firestore-21.4.0/AndroidManifest.xml:13:22-76
+21-->[com.google.firebase:firebase-firestore:21.4.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\6791a53b00de02dbf2fffeac30e4a198\jetified-firebase-firestore-21.4.0\AndroidManifest.xml:13:5-79
+21-->[com.google.firebase:firebase-firestore:21.4.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\6791a53b00de02dbf2fffeac30e4a198\jetified-firebase-firestore-21.4.0\AndroidManifest.xml:13:22-76
 22
 23    <uses-feature
-23-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
 24        android:glEsVersion="0x00020000"
-24-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+24-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
 25        android:required="true" />
-25-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+25-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 26
 27    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-27-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:5-68
-27-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:24:22-65
+27-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\883fe3ee61da0b22067da7d7ee17f093\jetified-play-services-measurement-api-17.2.2\AndroidManifest.xml:24:5-68
+27-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\883fe3ee61da0b22067da7d7ee17f093\jetified-play-services-measurement-api-17.2.2\AndroidManifest.xml:24:22-65
 28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-28-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
-28-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+28-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:26:5-82
+28-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:26:22-79
 29    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-29-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:26:5-110
-29-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:26:22-107
+29-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:26:5-110
+29-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:26:22-107
 30
 31    <application
-31-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:13:5-65:19
+31-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:13:5-65:19
 32        android:allowBackup="true"
-32-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:14:9-35
+32-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:14:9-35
 33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/331630a23dfa1f0594bcf54d5352aa36/core-1.1.0/AndroidManifest.xml:24:18-86
+33-->[androidx.core:core:1.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\f961a727fd6ff1bec6d760c391cc6822\core-1.1.0\AndroidManifest.xml:24:18-86
 34        android:debuggable="true"
-35        android:icon="@mipmap/ic_launcher"
-35-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:15:9-43
-36        android:label="@string/app_name"
-36-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:16:9-41
-37        android:roundIcon="@mipmap/ic_launcher_round"
-37-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:17:9-54
-38        android:supportsRtl="true"
-38-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:18:9-35
-39        android:testOnly="true"
-40        android:theme="@style/AppTheme" >
-40-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:19:9-40
-41        <activity android:name="com.tuyuservices.tuyu.ProfileActivity" />
-41-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:20:9-62
-41-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:20:19-50
-42        <!--
-43             The API key for Google Maps-based APIs is defined as a string resource.
-44             (See the file "res/values/google_maps_api.xml").
-45             Note that the API key is linked to the encryption key used to sign the APK.
-46             You need a different API key for each encryption key, including the release key that is used to
-47             sign the APK for publishing.
-48             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-49        -->
-50        <meta-data
-50-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:29:9-31:55
-51            android:name="com.google.android.geo.API_KEY"
-51-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:30:13-58
-52            android:value="@string/google_maps_key" />
-52-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:31:13-52
-53
-54        <activity
-54-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:33:9-35:66
-55            android:name="com.tuyuservices.tuyu.MapAddressActivity"
-55-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:34:13-47
-56            android:label="@string/title_activity_map_address" />
-56-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:35:13-63
-57        <activity android:name="com.tuyuservices.tuyu.RatingsActivity" />
-57-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:36:9-53
-57-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:36:19-50
-58        <activity
-58-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:37:9-39:65
-59            android:name="com.tuyuservices.tuyu.MapsFinalActivity"
-59-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:38:13-46
-60            android:label="@string/title_activity_maps_final" />
-60-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:39:13-62
-61        <activity android:name="com.tuyuservices.tuyu.FinalActivity" />
-61-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:40:9-51
-61-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:40:19-48
-62        <activity android:name="com.tuyuservices.tuyu.PaymentActivity" />
-62-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:41:9-53
-62-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:41:19-50
-63        <activity android:name="com.tuyuservices.tuyu.CartActivity" />
-63-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:42:9-50
-63-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:42:19-47
-64        <activity android:name="com.tuyuservices.tuyu.ComingSoonActivity" />
-64-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:43:9-56
-64-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:43:19-53
-65        <activity android:name="com.tuyuservices.tuyu.ListActivitySecondary" />
-65-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:44:9-59
-65-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:44:19-56
-66        <activity android:name="com.tuyuservices.tuyu.TrialDatabaseActivity" />
-66-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:45:9-59
-66-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:45:19-56
-67        <activity
-67-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:46:9-48:52
-68            android:name="com.tuyuservices.tuyu.ListActivity"
-68-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:47:13-41
-69            android:screenOrientation="portrait" />
-69-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:48:13-49
-70        <activity
-70-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:49:9-51:52
-71            android:name="com.tuyuservices.tuyu.HomeActivity"
-71-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:50:13-41
-72            android:screenOrientation="portrait" />
-72-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:51:13-49
-73        <activity
-73-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:52:9-54:52
-74            android:name="com.tuyuservices.tuyu.LoginActivity"
-74-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:53:13-42
-75            android:screenOrientation="portrait" />
-75-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:54:13-49
-76        <activity
-76-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:55:9-64:20
-77            android:name="com.tuyuservices.tuyu.SplashActivity"
-77-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:56:13-43
-78            android:noHistory="true"
-78-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:57:13-37
-79            android:screenOrientation="portrait" >
-79-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:58:13-49
-80            <intent-filter>
-80-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:59:13-63:29
-81                <action android:name="android.intent.action.MAIN" />
-81-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:60:17-69
-81-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:60:25-66
-82
-83                <category android:name="android.intent.category.LAUNCHER" />
-83-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:62:17-77
-83-->/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/Tuyu/app/src/main/AndroidManifest.xml:62:27-74
-84            </intent-filter>
-85        </activity>
-86        <activity
-86-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
-87            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-87-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
-88            android:excludeFromRecents="true"
-88-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
-89            android:exported="true"
-89-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
-90            android:launchMode="singleTask"
-90-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
-91            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-91-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
-92            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-92-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
-93
-94        <service
-94-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:33:9-39:19
-95            android:name="com.google.firebase.components.ComponentDiscoveryService"
-95-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:34:13-84
-96            android:directBootAware="true"
-96-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-97            android:exported="false" >
-97-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
-98            <meta-data
-98-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
-99                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-99-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
-100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-auth:19.2.0] /home/barani/.gradle/caches/transforms-2/files-2.1/1569b356ae21c59997606b87853bf436/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
-101            <meta-data
-101-->[com.google.firebase:firebase-firestore:21.4.0] /home/barani/.gradle/caches/transforms-2/files-2.1/7f21ac5948fa162e542842fddb32b0e7/jetified-firebase-firestore-21.4.0/AndroidManifest.xml:20:13-22:85
-102                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-102-->[com.google.firebase:firebase-firestore:21.4.0] /home/barani/.gradle/caches/transforms-2/files-2.1/7f21ac5948fa162e542842fddb32b0e7/jetified-firebase-firestore-21.4.0/AndroidManifest.xml:21:17-111
-103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[com.google.firebase:firebase-firestore:21.4.0] /home/barani/.gradle/caches/transforms-2/files-2.1/7f21ac5948fa162e542842fddb32b0e7/jetified-firebase-firestore-21.4.0/AndroidManifest.xml:22:17-82
-104            <meta-data
-104-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:32:13-34:85
-105                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-105-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:33:17-109
-106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[com.google.firebase:firebase-database:19.2.1] /home/barani/.gradle/caches/transforms-2/files-2.1/40d203d0674822dbdfc1bb4103e3a3d4/firebase-database-19.2.1/AndroidManifest.xml:34:17-82
-107            <meta-data
-107-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
-108                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-108-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
-109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/3d8bed9a53529358f2c71b6407804b7b/play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
-110            <meta-data
-110-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
-111                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-111-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
-112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
-113        </service> <!-- Needs to be explicitly declared on P+ -->
-114        <uses-library
-114-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
-115            android:name="org.apache.http.legacy"
-115-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
-116            android:required="false" />
-116-->[com.google.android.gms:play-services-maps:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/82653396968af777fdb1f59f7c3ba8c3/play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
-117
-118        <receiver
-118-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
-119            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-119-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
-120            android:exported="true"
-120-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
-121            android:permission="com.google.android.c2dm.permission.SEND" >
-121-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
-122            <intent-filter>
-122-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
-123                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-123-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
-123-->[com.google.firebase:firebase-iid:20.0.2] /home/barani/.gradle/caches/transforms-2/files-2.1/946a39d7756c6b05aa38a853bdffc128/firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
-124            </intent-filter>
-125        </receiver>
-126
-127        <activity
-127-->[com.google.android.gms:play-services-base:17.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/6d206c10dfcd7e4d261b33c292c090cb/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-128            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-128-->[com.google.android.gms:play-services-base:17.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/6d206c10dfcd7e4d261b33c292c090cb/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-129            android:exported="false"
-129-->[com.google.android.gms:play-services-base:17.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/6d206c10dfcd7e4d261b33c292c090cb/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-130            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-130-->[com.google.android.gms:play-services-base:17.1.0] /home/barani/.gradle/caches/transforms-2/files-2.1/6d206c10dfcd7e4d261b33c292c090cb/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-131
-132        <provider
-132-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-133            android:name="com.google.firebase.provider.FirebaseInitProvider"
-133-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-134            android:authorities="com.tuyuservices.tuyu.firebaseinitprovider"
-134-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-135            android:exported="false"
-135-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-136            android:initOrder="100" />
-136-->[com.google.firebase:firebase-common:19.3.0] /home/barani/.gradle/caches/transforms-2/files-2.1/16bac7dbe8ae3fa425bb4799f55c5bc9/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-137
-138        <receiver
-138-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
-139            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-139-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
-140            android:enabled="true"
-140-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
-141            android:exported="false" >
-141-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
-142        </receiver>
-143        <receiver
-143-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
-144            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-144-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
-145            android:enabled="true"
-145-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
-146            android:exported="true"
-146-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
-147            android:permission="android.permission.INSTALL_PACKAGES" >
-147-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
-148            <intent-filter>
-148-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
-149                <action android:name="com.android.vending.INSTALL_REFERRER" />
-149-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
-149-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
-150            </intent-filter>
-151        </receiver>
-152
-153        <service
-153-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
-154            android:name="com.google.android.gms.measurement.AppMeasurementService"
-154-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
-155            android:enabled="true"
-155-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
-156            android:exported="false" />
-156-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
-157        <service
-157-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
-158            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-158-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
-159            android:enabled="true"
-159-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
-160            android:exported="false"
-160-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
-161            android:permission="android.permission.BIND_JOB_SERVICE" />
-161-->[com.google.android.gms:play-services-measurement:17.2.2] /home/barani/.gradle/caches/transforms-2/files-2.1/ac2605da77983b497481f9e2091aefdd/play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
-162
-163        <meta-data
-163-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-164            android:name="com.google.android.gms.version"
-164-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-165            android:value="@integer/google_play_services_version" />
-165-->[com.google.android.gms:play-services-basement:17.0.0] /home/barani/.gradle/caches/transforms-2/files-2.1/17f85806b640e9130464b42c5f0caa5e/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-166    </application>
-167
-168</manifest>
+35        android:extractNativeLibs="false"
+36        android:icon="@mipmap/ic_launcher"
+36-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:15:9-43
+37        android:label="@string/app_name"
+37-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:16:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:17:9-54
+39        android:supportsRtl="true"
+39-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:18:9-35
+40        android:testOnly="true"
+41        android:theme="@style/AppTheme" >
+41-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:19:9-40
+42        <activity android:name="com.tuyuservices.tuyu.ProfileActivity" />
+42-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:20:9-62
+42-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:20:19-50
+43        <!--
+44             The API key for Google Maps-based APIs is defined as a string resource.
+45             (See the file "res/values/google_maps_api.xml").
+46             Note that the API key is linked to the encryption key used to sign the APK.
+47             You need a different API key for each encryption key, including the release key that is used to
+48             sign the APK for publishing.
+49             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+50        -->
+51        <meta-data
+51-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:29:9-31:55
+52            android:name="com.google.android.geo.API_KEY"
+52-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:30:13-58
+53            android:value="@string/google_maps_key" />
+53-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:31:13-52
+54
+55        <activity
+55-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:33:9-35:66
+56            android:name="com.tuyuservices.tuyu.MapAddressActivity"
+56-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:34:13-47
+57            android:label="@string/title_activity_map_address" />
+57-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:35:13-63
+58        <activity android:name="com.tuyuservices.tuyu.RatingsActivity" />
+58-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:36:9-53
+58-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:36:19-50
+59        <activity
+59-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:37:9-39:65
+60            android:name="com.tuyuservices.tuyu.MapsFinalActivity"
+60-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:38:13-46
+61            android:label="@string/title_activity_maps_final" />
+61-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:39:13-62
+62        <activity android:name="com.tuyuservices.tuyu.FinalActivity" />
+62-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:40:9-51
+62-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:40:19-48
+63        <activity android:name="com.tuyuservices.tuyu.PaymentActivity" />
+63-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:41:9-53
+63-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:41:19-50
+64        <activity android:name="com.tuyuservices.tuyu.CartActivity" />
+64-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:42:9-50
+64-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:42:19-47
+65        <activity android:name="com.tuyuservices.tuyu.ComingSoonActivity" />
+65-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:43:9-56
+65-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:43:19-53
+66        <activity android:name="com.tuyuservices.tuyu.ListActivitySecondary" />
+66-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:44:9-59
+66-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:44:19-56
+67        <activity android:name="com.tuyuservices.tuyu.TrialDatabaseActivity" />
+67-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:45:9-59
+67-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:45:19-56
+68        <activity
+68-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:46:9-48:52
+69            android:name="com.tuyuservices.tuyu.ListActivity"
+69-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:47:13-41
+70            android:screenOrientation="portrait" />
+70-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:48:13-49
+71        <activity
+71-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:49:9-51:52
+72            android:name="com.tuyuservices.tuyu.HomeActivity"
+72-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:50:13-41
+73            android:screenOrientation="portrait" />
+73-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:51:13-49
+74        <activity
+74-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:52:9-54:52
+75            android:name="com.tuyuservices.tuyu.LoginActivity"
+75-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:53:13-42
+76            android:screenOrientation="portrait" />
+76-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:54:13-49
+77        <activity
+77-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:55:9-64:20
+78            android:name="com.tuyuservices.tuyu.SplashActivity"
+78-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:56:13-43
+79            android:noHistory="true"
+79-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:57:13-37
+80            android:screenOrientation="portrait" >
+80-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:58:13-49
+81            <intent-filter>
+81-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:59:13-63:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:60:17-69
+82-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:60:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:62:17-77
+84-->C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:62:27-74
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:24:9-31:50
+88            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+88-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:25:13-85
+89            android:excludeFromRecents="true"
+89-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:26:13-46
+90            android:exported="true"
+90-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:27:13-36
+91            android:launchMode="singleTask"
+91-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:28:13-44
+92            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+92-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:29:13-102
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+93-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:30:13-72
+94
+95        <service
+95-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:33:9-39:19
+96            android:name="com.google.firebase.components.ComponentDiscoveryService"
+96-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:34:13-84
+97            android:directBootAware="true"
+97-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+98            android:exported="false" >
+98-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:35:13-37
+99            <meta-data
+99-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:36:13-38:85
+100                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+100-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:37:17-109
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\90a9f1e11b26502a87189338c9230db9\jetified-firebase-auth-19.2.0\AndroidManifest.xml:38:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-firestore:21.4.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\6791a53b00de02dbf2fffeac30e4a198\jetified-firebase-firestore-21.4.0\AndroidManifest.xml:20:13-22:85
+103                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+103-->[com.google.firebase:firebase-firestore:21.4.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\6791a53b00de02dbf2fffeac30e4a198\jetified-firebase-firestore-21.4.0\AndroidManifest.xml:21:17-111
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-firestore:21.4.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\6791a53b00de02dbf2fffeac30e4a198\jetified-firebase-firestore-21.4.0\AndroidManifest.xml:22:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-database:19.2.1] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\8034dc9f3f5420545158b80dfc317073\jetified-firebase-database-19.2.1\AndroidManifest.xml:32:13-34:85
+106                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+106-->[com.google.firebase:firebase-database:19.2.1] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\8034dc9f3f5420545158b80dfc317073\jetified-firebase-database-19.2.1\AndroidManifest.xml:33:17-109
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-database:19.2.1] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\8034dc9f3f5420545158b80dfc317073\jetified-firebase-database-19.2.1\AndroidManifest.xml:34:17-82
+108            <meta-data
+108-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\883fe3ee61da0b22067da7d7ee17f093\jetified-play-services-measurement-api-17.2.2\AndroidManifest.xml:30:13-32:85
+109                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+109-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\883fe3ee61da0b22067da7d7ee17f093\jetified-play-services-measurement-api-17.2.2\AndroidManifest.xml:31:17-139
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.android.gms:play-services-measurement-api:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\883fe3ee61da0b22067da7d7ee17f093\jetified-play-services-measurement-api-17.2.2\AndroidManifest.xml:32:17-82
+111            <meta-data
+111-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:32:13-34:85
+112                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+112-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:33:17-96
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:34:17-82
+114        </service> <!-- Needs to be explicitly declared on P+ -->
+115        <uses-library
+115-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+116            android:name="org.apache.http.legacy"
+116-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+117            android:required="false" />
+117-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\4e254cb7f308a30966022d28cc45f3ae\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+118
+119        <receiver
+119-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:37:9-44:20
+120            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+120-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:38:13-78
+121            android:exported="true"
+121-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:39:13-36
+122            android:permission="com.google.android.c2dm.permission.SEND" >
+122-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:40:13-73
+123            <intent-filter>
+123-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:41:13-43:29
+124                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+124-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:42:17-81
+124-->[com.google.firebase:firebase-iid:20.0.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\0dbca7ef2e7fe6dd6ad20b90edf9f9bc\jetified-firebase-iid-20.0.2\AndroidManifest.xml:42:25-78
+125            </intent-filter>
+126        </receiver>
+127
+128        <activity
+128-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\d515fa0142795af05e3369fe0848cba8\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+129            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+129-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\d515fa0142795af05e3369fe0848cba8\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+130            android:exported="false"
+130-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\d515fa0142795af05e3369fe0848cba8\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+131-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\d515fa0142795af05e3369fe0848cba8\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+132
+133        <provider
+133-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+134            android:name="com.google.firebase.provider.FirebaseInitProvider"
+134-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+135            android:authorities="com.tuyuservices.tuyu.firebaseinitprovider"
+135-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+136            android:exported="false"
+136-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+137            android:initOrder="100" />
+137-->[com.google.firebase:firebase-common:19.3.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+138
+139        <receiver
+139-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:29:9-33:20
+140            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+140-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:30:13-85
+141            android:enabled="true"
+141-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:31:13-35
+142            android:exported="false" >
+142-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:32:13-37
+143        </receiver>
+144        <receiver
+144-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:34:9-42:20
+145            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+145-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:35:13-100
+146            android:enabled="true"
+146-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:36:13-35
+147            android:exported="true"
+147-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:37:13-36
+148            android:permission="android.permission.INSTALL_PACKAGES" >
+148-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:38:13-69
+149            <intent-filter>
+149-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:39:13-41:29
+150                <action android:name="com.android.vending.INSTALL_REFERRER" />
+150-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:40:17-79
+150-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:40:25-76
+151            </intent-filter>
+152        </receiver>
+153
+154        <service
+154-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:44:9-47:40
+155            android:name="com.google.android.gms.measurement.AppMeasurementService"
+155-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:45:13-84
+156            android:enabled="true"
+156-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:46:13-35
+157            android:exported="false" />
+157-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:47:13-37
+158        <service
+158-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:48:9-52:72
+159            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+159-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:49:13-87
+160            android:enabled="true"
+160-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:50:13-35
+161            android:exported="false"
+161-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:51:13-37
+162            android:permission="android.permission.BIND_JOB_SERVICE" />
+162-->[com.google.android.gms:play-services-measurement:17.2.2] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\10ddb5a7f44298deca40fafe6f4c087b\jetified-play-services-measurement-17.2.2\AndroidManifest.xml:52:13-69
+163
+164        <meta-data
+164-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+165            android:name="com.google.android.gms.version"
+165-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+166            android:value="@integer/google_play_services_version" />
+166-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+167    </application>
+168
+169</manifest>
