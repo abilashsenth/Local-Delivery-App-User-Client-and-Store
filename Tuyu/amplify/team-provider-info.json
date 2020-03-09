@@ -1,0 +1,20 @@
+{
+    "android": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-water360-android-131841-authRole",
+            "UnauthRoleArn": "arn:aws:iam::591821196485:role/amplify-water360-android-131841-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::591821196485:role/amplify-water360-android-131841-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-water360-android-131841-deployment",
+            "UnauthRoleName": "amplify-water360-android-131841-unauthRole",
+            "StackName": "amplify-water360-android-131841",
+            "StackId": "arn:aws:cloudformation:eu-west-1:591821196485:stack/amplify-water360-android-131841/3d9673f0-6111-11ea-842a-0a259d6932f8",
+            "AmplifyAppId": "dpq2r353odgvi"
+        },
+        "categories": {
+            "auth": {
+                "water360b48d83c9": {}
+            }
+        }
+    }
+}

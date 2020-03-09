@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.amazonaws:aws-android-sdk-cognitoauth:2.16.8@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4b97e86cdb69f843dfb125f7dc97b82/jetified-aws-android-sdk-cognitoauth-2.16.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4b97e86cdb69f843dfb125f7dc97b82/jetified-aws-android-sdk-cognitoauth-2.16.8/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-cognitoauth/2.16.8/23cf0c29dd92828ad281103df64b7fdc66873737/aws-android-sdk-cognitoauth-2.16.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-cognitoauth/2.16.8/392f86cb4b18f1b9b6057eddd5307c7450b97e28/aws-android-sdk-cognitoauth-2.16.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

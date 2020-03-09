@@ -163,6 +163,7 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr button_style
 attr cameraBearing
 attr cameraMaxZoomPreference
 attr cameraMinZoomPreference
@@ -364,6 +365,7 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr forgotPasswordViewBackgroundColor
 attr gapBetweenBars
 attr goIcon
 attr headerLayout
@@ -542,6 +544,9 @@ attr maxCharacterCount
 attr maxImageSize
 attr measureWithLargestChild
 attr menu
+attr metaButtonBarButtonStyle
+attr metaButtonBarStyle
+attr mfaViewBackgroundColor
 attr minTouchTargetSize
 attr multiChoiceItemLayout
 attr navigationContentDescription
@@ -604,6 +609,10 @@ attr showMotionSpec
 attr showText
 attr showTitle
 attr shrinkMotionSpec
+attr signInBackgroundColor
+attr signInImageResId
+attr signUpConfirmViewBackgroundColor
+attr signUpViewBackgroundColor
 attr singleChoiceItemLayout
 attr singleLine
 attr singleSelection
@@ -809,6 +818,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -971,6 +984,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sign_in_separator_color
 color starColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
@@ -1063,6 +1077,8 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1316,6 +1332,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen sign_in_button_height
+dimen sign_in_button_margin
+dimen sign_in_button_width
+dimen sign_in_separator_height
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1337,6 +1357,11 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen user_pools_button_height
+dimen user_pools_button_text_size
+dimen user_pools_form_margin
+dimen user_pools_intra_group_separation
+dimen user_pools_sign_in_button_margin_top_bottom
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1462,6 +1487,7 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable computer_icon
 drawable deep_clean_icon
+drawable default_sign_in_logo
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1622,6 +1648,11 @@ id blocking
 id bold
 id bottom
 id bottomNavigationView
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id buttonPanel
 id button_confirm_address
 id cancel_action
@@ -1643,6 +1674,10 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id commentEditText
+id confirm_account_button
+id confirm_account_message1
+id confirm_account_message2
+id confirm_account_title
 id confirm_button
 id container
 id content
@@ -1685,7 +1720,17 @@ id filter_chip
 id fitToContents
 id fixed
 id flash_icon
+id force_change_password_button
+id force_change_password_form
+id force_change_password_message
+id force_change_password_title
+id force_change_password_view
 id forever
+id forgot_password_button
+id forgot_password_form
+id forgot_password_message
+id forgot_password_title
+id forgot_password_view
 id fragment_container
 id fullStarImage
 id ghost_view
@@ -1708,6 +1753,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id labeled
+id large
 id largeLabel
 id left
 id light
@@ -1731,12 +1777,18 @@ id listview_background_shape
 id logOut
 id login_arrow
 id login_bar
+id login_button_cognito
 id login_linear_layout_1
 id login_linear_layout_2
 id map
 id masked
 id media_actions
 id message
+id mfa_button
+id mfa_form
+id mfa_message
+id mfa_title
+id mfa_view
 id middle
 id mini
 id minus_button_list
@@ -1795,6 +1847,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id password_edit
 id password_toggle
 id payment_recycler
 id peekHeight
@@ -1857,6 +1910,13 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signup_button
+id signup_confirm_form
+id signup_confirm_view
+id signup_form
+id signup_layout
+id signup_message
+id signup_view
 id skipCollapsed
 id slide
 id slider
@@ -1865,6 +1925,7 @@ id slot2
 id slot3
 id slot4
 id slotTiming
+id small
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1926,6 +1987,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_pool_sign_in_view_id
+id username_edit
 id view_offset_helper
 id visible
 id wide
@@ -1996,19 +2059,28 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_cart2
+layout activity_cognito
 layout activity_coming_soon
 layout activity_final
+layout activity_force_change_password
+layout activity_forgot_password
 layout activity_home
 layout activity_list
 layout activity_list_secondary
 layout activity_login
 layout activity_map_address
 layout activity_maps_final
+layout activity_mfa
 layout activity_payment
 layout activity_profile
 layout activity_ratings
+layout activity_sign_in
+layout activity_sign_up
+layout activity_sign_up_confirm
 layout activity_splash
 layout activity_trial_database
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout component_app_rate_dialog
 layout component_custom_rating_bar
 layout component_tabbar_badge
@@ -2033,6 +2105,8 @@ layout fragment_cart
 layout fragment_home
 layout fragment_profile
 layout fragment_search
+layout horizontal_or_sign_in_divider
+layout horizontal_sign_in_divider
 layout list_item_type_one
 layout list_item_type_two
 layout mtrl_alert_dialog
@@ -2101,6 +2175,8 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw amplifyconfiguration
+raw awsconfiguration
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2155,12 +2231,21 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string email_address_text
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
+string force_change_password_body
+string force_change_password_button_hint
+string force_change_password_header
+string forgot_password_body
+string forgot_password_button_hint
+string forgot_password_header
+string forgot_password_input_code_hint
 string gcm_defaultSenderId
+string given_name_text
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
@@ -2169,6 +2254,12 @@ string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string incorrect_username_or_password
+string login_failed
+string mfa_code_empty
+string mfa_code_sent_message
+string mfa_failed
+string mfa_header
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
@@ -2203,17 +2294,59 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string package_name
+string password_change_failed
+string password_change_no_verification_failed
+string password_change_success
+string password_length_validation_failed
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string phone_number_text
+string please_wait
 string project_id
 string search_menu_title
+string sign_in_button_text
+string sign_in_canceled_message_format
+string sign_in_failure_message_format
+string sign_in_forgot_password
+string sign_in_hide_password
+string sign_in_new_account
+string sign_in_or
+string sign_in_password
+string sign_in_show_password
+string sign_in_succeeded_message_format
+string sign_in_username
+string sign_in_with
+string sign_up_confirm_code
+string sign_up_confirm_code_missing
+string sign_up_confirm_code_sent
+string sign_up_confirm_enter_code
+string sign_up_confirm_failed
+string sign_up_confirm_success
+string sign_up_confirm_text
+string sign_up_confirm_title
+string sign_up_failed
+string sign_up_header
+string sign_up_in_progress
+string sign_up_success
+string sign_up_username_missing
 string status_bar_notification_info_overflow
 string title_activity_cart
+string title_activity_force_change_password
+string title_activity_forgot_password
 string title_activity_map_address
 string title_activity_maps_final
+string title_activity_mfa
+string title_activity_sign_in
+string title_activity_sign_up
+string title_activity_sign_up_confirm
+string title_dialog_sign_up_failed
+string user_does_not_exist
+string username_text
+string verify_button_text
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2924,6 +3057,7 @@ styleable Badge backgroundColor badgeGravity badgeTextColor maxCharacterCount nu
 styleable BottomAppBar backgroundTint elevation fabAlignmentMode fabAnimationMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView backgroundTint elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemRippleColor itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout android_elevation backgroundTint behavior_expandedOffset behavior_fitToContents behavior_halfExpandedRatio behavior_hideable behavior_peekHeight behavior_saveFlags behavior_skipCollapsed shapeAppearance shapeAppearanceOverlay
+styleable ButtonBarContainerTheme metaButtonBarButtonStyle metaButtonBarStyle
 styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
@@ -2946,6 +3080,7 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable ForgotPasswordView forgotPasswordViewBackgroundColor
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation
@@ -2953,6 +3088,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MFAView mfaViewBackgroundColor
 styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
@@ -2978,7 +3114,10 @@ styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
-styleable SignInButton buttonSize colorScheme scopeUris
+styleable SignInButton buttonSize button_style colorScheme scopeUris text
+styleable SignInView signInBackgroundColor signInImageResId
+styleable SignUpConfirmView signUpConfirmViewBackgroundColor
+styleable SignUpView signUpViewBackgroundColor
 styleable SlideToActView animate_completion area_margin border_radius inner_color outer_color rotate_icon slider_height slider_icon slider_icon_color slider_locked slider_reversed text text_appearance text_color text_size text_style
 styleable SlideToActViewTheme slideToActViewStyle
 styleable Snackbar snackbarButtonStyle snackbarStyle
