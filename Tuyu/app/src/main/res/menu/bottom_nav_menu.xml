@@ -5,10 +5,7 @@
         android:icon="@drawable/homeicon"
         android:title="Home"
         android:enabled="true"/>
-    <item android:id="@+id/action_search"
-        android:icon="@drawable/search_icon"
-        android:title="Search"
-        android:enabled="true"/>
+
     <item android:id="@+id/action_cart"
         android:icon="@drawable/cart_icon"
         android:title="Orders"

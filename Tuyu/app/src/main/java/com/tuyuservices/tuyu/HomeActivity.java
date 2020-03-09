@@ -87,6 +87,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         }
 
 
+
+
     }
 
 
@@ -128,9 +130,10 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.action_home:
                 fragment = new HomeFragment();
                 break;
-            case R.id.action_search:
+           /** case R.id.action_search:
                 fragment = new SearchFragment();
                 break;
+            **/
             case R.id.action_cart:
 
                 fragment = new CartFragment();
@@ -214,12 +217,14 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
+    /**
     public void openSearch(View v){
         //when the searchbar in the home screen is tapped
         //bottomnavigation view has to be highlighted manually in event of fragment chnge manually
         loadFragment(new SearchFragment());
         bottomNavigationView.getMenu().findItem(R.id.action_search).setChecked(true);
     }
+     **/
 
 
     public void getsearchList(){
