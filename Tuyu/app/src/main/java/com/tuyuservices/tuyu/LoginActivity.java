@@ -75,6 +75,8 @@ public class LoginActivity extends AppCompatActivity {
     boolean flag = false;
     public void loginCall(View view) {
         //ignoring entire phone otp verification. the first time user presses button, the name, number are taken and next activity is run
+        number = mEditText.getText().toString();
+        name = nameEdittext.getText().toString();
         SaveNUM("NUMBER", number);
         SaveName("NAME", name);
         // ...
