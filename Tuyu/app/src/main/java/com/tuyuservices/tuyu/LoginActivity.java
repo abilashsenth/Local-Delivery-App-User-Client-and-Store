@@ -74,6 +74,14 @@ public class LoginActivity extends AppCompatActivity {
 
     boolean flag = false;
     public void loginCall(View view) {
+        //ignoring entire phone otp verification. the first time user presses button, the name, number are taken and next activity is run
+        SaveNUM("NUMBER", number);
+        SaveName("NAME", name);
+        // ...
+        Intent mHomeIntent = new Intent(LoginActivity.this, MapAddressActivity.class);
+        startActivity(mHomeIntent);
+
+        /**
         if(!flag) {
             flag = true;
             //user entered a number and calls for login
@@ -93,6 +101,7 @@ public class LoginActivity extends AppCompatActivity {
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, otpEdittext.getText().toString());
             signInWithPhoneAuthCredential(credential);
         }
+         **/
 
     }
 
