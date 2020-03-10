@@ -51,14 +51,7 @@
             </RelativeLayout>
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80sp"
-                android:id="@+id/searchBar"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"
-                android:onClick="openSearch"
-                android:src="@drawable/search_bar_home"/>
+
 
 
             <ImageView
@@ -70,9 +63,48 @@
                 android:src="@drawable/home_header"/>
 
 
-            <!-- layout of elements with open services-->
 
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_margin="10sp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="300sp"
+                        android:layout_height="200sp"
+                        android:layout_margin="10sp"
+                        android:src="@drawable/home_card1"/>
+
+                    <ImageView
+                        android:layout_width="300sp"
+                        android:layout_height="200sp"
+                        android:layout_margin="10sp"
+                        android:src="@drawable/home_card1"/>
+
+                    <ImageView
+                        android:layout_width="300sp"
+                        android:layout_height="200sp"
+                        android:layout_margin="10sp"
+                        android:src="@drawable/home_card1"/>
+
+                </LinearLayout>
+
+
+
+
+            </HorizontalScrollView>
+
+
+            <!-- layout of elements with open services-->
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -156,52 +188,12 @@
 
 
             </LinearLayout>
-
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:layout_margin="10sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20sp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
-                        android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
-
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
-                        android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
-
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
-                        android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
-
-                </LinearLayout>
-
-
-
-
-            </HorizontalScrollView>
-
-
             <!-- layout of elements with open services-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:orientation="horizontal"
                 android:layout_margin="10sp">
 
@@ -282,11 +274,9 @@
 
 
             </LinearLayout>
-
-
             <!-- layout of elements with open services-->
-
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -370,11 +360,9 @@
 
 
             </LinearLayout>
-
-
             <!-- layout of elements with open services-->
-
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -409,6 +397,15 @@
 
             </LinearLayout>
 
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:layout_weight="1"
+                android:id="@+id/recycler_view">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
             <ImageView
                 android:layout_width="wrap_content"

@@ -2,48 +2,34 @@ package com.tuyuservices.tuyu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -64,6 +50,22 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     private SharedPreferences sharedPreferences;
     private ViewGroup container;
     View view; //pass the correct layout name for the fragmen
+    private ArrayList<Shop> shopList;
+    private DatabaseReference databaseReference;
+    private DatabaseReference mRef;
+    private ValueEventListener valueEventListener;
+
+    //get latitude and longitude
+    String latitude, longitude;
+
+    //implement listview in home
+    private String TAG = "LISTHOME";
+    private String serviceTag;
+    String[] listString;
+    int lengthCount =0;
+
+
+    private FirebaseDatabase mFirebaseDatabase;
 
 
     @Override
@@ -80,6 +82,9 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         cartActive = getIntent().getBooleanExtra("cartActive", false);
         openCart = getIntent().getBooleanExtra("openCartx", false);
+        latitude = getIntent().getStringExtra("latitude");
+        longitude = getIntent().getStringExtra("longitude");
+
         if(openCart){
             getCartListWithIntent(cartActive);
         }else {
@@ -87,10 +92,161 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         }
 
 
+        //initialize the list of shops
+
+        initializeWaterShops( );
 
 
     }
 
+    private void initializeWaterShops() {
+
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mRef = mFirebaseDatabase.getReference();
+        serviceTag = "Airconditioner";
+        retreiveData(serviceTag);
+    }
+
+    private float compareDistance(Location a, Location b){
+        return   a.distanceTo(b);
+    }
+
+
+
+    private void retreiveData(final String x) {
+
+        shopList = new ArrayList<>();
+        // Read from the database
+        valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+
+                    for (DataSnapshot ds : dataSnapshot.child("SHOP").getChildren()) {
+                        String UID = (String) ds.getKey();
+                        String name = null, rating = null, sampleprice = null, shopimage = null, location = null;
+                        for(DataSnapshot d:ds.child(UID).getChildren()){
+                            name = (String) d.child("NAME").getValue();
+                            Log.e(TAG, name);
+                            rating = (String) d.child("RATING").getValue();
+                            sampleprice = (String) d.child("SAMPLEPRICE").getValue();
+                            shopimage = (String) d.child("SAMPLEIMAGE").getValue();
+                            location = ((String) d.child("LAT").getValue())+((String) d.child("LONG").getValue());
+                        }
+
+
+
+                       //create instances of shops, add them into the list
+                        Shop mShop = new Shop(UID, name, rating, sampleprice, shopimage, location);
+                        shopList.add(mShop);
+                        lengthCount++;
+
+
+                        //TODO make sure the image uri will be dynamic
+                        Uri uri = Uri.parse("android.resource://com.tuyuservices.tuyu/drawable/homeicon");
+                        try {
+                            InputStream stream = getContentResolver().openInputStream(uri);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+               // setupCustomRecyclerView(shopList);
+               // mRef.removeEventListener(valueEventListener);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+    }
+
+
+    /**
+     *the recyclerview setup of the first list where the recyclerview contains an image and title
+     *
+     **/
+
+
+    ListAdapter listAdapter;
+
+    public void setupCustomRecyclerView(List<Service> list){
+        listAdapter = new ListAdapter(list);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+
+        mRecyclerView.setAdapter(listAdapter);
+
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+
+                // Write your code here
+
+                //pass servicetag and then the string[position]
+
+                Log.e("Tag"," "+position );
+
+                openListSecondary(position);
+
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+
+    }
+
+
+
+
+    private void openListSecondary(int position) {
+        if(isCartEnabled){
+            Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
+
+            intent.putExtra("maintag", serviceTag);
+            intent.putExtra("secondtag", "Airconditioner");
+
+            Log.e("Cart", "cart data from ListActivity -> ListSecondaryActivity");
+
+
+            intent.putExtra("openCart", true);
+            intent.putExtra("pricelist", priceList);
+            intent.putExtra("namelist", nameList);
+            intent.putExtra("size", size);
+            startActivity(intent);
+        }else{
+            Log.e("Cart", "NO cart data from ListActivity -> ListSecondaryActivity");
+
+            Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
+            intent.putExtra("maintag", serviceTag);
+            intent.putExtra("secondtag", "Airconditioner");
+            startActivity(intent);
+        }
+
+
+    }
 
     /**
      * loading a fragment when user clicks bottomnavigationview
@@ -166,6 +322,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         int serviceID = v.getId();
 
         Intent listIntent = new Intent(HomeActivity.this, ListActivity.class);
+
+        //passes the cart data to the intent to list
         if(cartList.size()!=0){
             Log.e("CART", "cart data from HomeActivity to ListActivity");
             listIntent.putExtra("openCart", true);
@@ -185,9 +343,10 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
+    //code implementation for search fragment. to enable, add menu option in bottom lost
     /** search fragment
      * when the search fragment is open and the user searches for a service
-     */
+
 
     DatabaseReference dbRef;
     FirebaseDatabase mFirebaseDatabase;
@@ -224,7 +383,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         loadFragment(new SearchFragment());
         bottomNavigationView.getMenu().findItem(R.id.action_search).setChecked(true);
     }
-     **/
+
 
 
     public void getsearchList(){
@@ -281,14 +440,22 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
+
+
+     **/
+
     public void addedToCart(){
         //when a button is clicked in recyclerview + or - or add to cart the method is executed
-        boolean cartcontent = listAdapter.isCartEmpty;
+        /**
+        boolean cartcontent = listAdapter.;
         if(cartcontent){
             //cartList = listAdapter.returnCart();
         }
+         **/
 
     }
+
+
 
     @Override
     public void onBackPressed() {
