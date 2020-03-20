@@ -23,31 +23,21 @@ import java.util.List;
 public class ListAdapterTwo extends RecyclerView.Adapter<ListAdapterTwo.MyViewHolder> {
 
     public Context mContext;
-
-    public interface ClickListener {
-
-        void onPositionClicked(int position);
-
-        void onLongClicked(int position);
-    }
     public List<Service> services;
     private ClickListener listener;
     boolean isCartEmpty = true;
     public List<Service> cartList;
+    public String shopUID;
 
-    public ListAdapterTwo(List<Service> mList, ClickListener listener, Context context){
+    public ListAdapterTwo(List<Service> mList, ClickListener listener, Context context, String shopUID){
         services  = mList;
         this.listener =listener;
         cartList = new ArrayList<>();
         mContext = context;
-        checkIfCartWorks();
+        this.shopUID = shopUID;
     }
 
-    private void checkIfCartWorks() {
 
-            Log.e("YOLO", "yeah this adapter is working");
-
-    }
 
     @NonNull
     @Override
@@ -110,6 +100,7 @@ public class ListAdapterTwo extends RecyclerView.Adapter<ListAdapterTwo.MyViewHo
                 indicator.setText(String.valueOf(count));
                 Service s = services.get(getAdapterPosition());
                 cartList.add(s);
+                //mini cart view is enabled through method in ListActivitySecondary
                 isCartEmpty = false;
                 if(mContext instanceof ListActivitySecondary){
                     ((ListActivitySecondary)mContext).addedToCart(true);
@@ -120,7 +111,6 @@ public class ListAdapterTwo extends RecyclerView.Adapter<ListAdapterTwo.MyViewHo
             }else if(v.getId() == plus.getId()){
                 if(count <8){
                     //Maximum of only 8 orders allowed per service
-                   // Log.e("TAG", String.valueOf(getAdapterPosition()));
                     count++;
                     indicator.setText(String.valueOf(count));
                     Service s = services.get(getAdapterPosition());
@@ -137,11 +127,12 @@ public class ListAdapterTwo extends RecyclerView.Adapter<ListAdapterTwo.MyViewHo
 
             }else if(v.getId() == minus.getId()){
                 if(count>0){
-                    //Log.e("TAG", String.valueOf(getAdapterPosition()));
                     count--;
                     indicator.setText(String.valueOf(count));
                     Service s = services.get(getAdapterPosition());
-                    cartList.remove(s);
+                    Log.e("TAG", String.valueOf(cartList.size()));
+                    cartList.remove(count);
+                    Log.e("TAG", String.valueOf(cartList.size()));
                     if(cartList.size()==0){
                         isCartEmpty =true;
                     }
@@ -174,6 +165,11 @@ public class ListAdapterTwo extends RecyclerView.Adapter<ListAdapterTwo.MyViewHo
     }
 
 
+    public interface ClickListener {
+
+        void onPositionClicked(int position);
+        void onLongClicked(int position);
+    }
 
 
 }

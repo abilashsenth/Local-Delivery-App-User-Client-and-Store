@@ -1656,6 +1656,7 @@ id buttonPanel
 id button_confirm_address
 id cancel_action
 id cancel_button
+id cartOrderView
 id cartViewList
 id cartViewListSecondary
 id cart_fragment_temp_layout
@@ -1993,7 +1994,6 @@ id wide
 id withText
 id wrap
 id wrap_content
-id yeehaw
 id z02
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2056,10 +2056,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_cart2
+layout activity_cart
 layout activity_cognito
-layout activity_coming_soon
-layout activity_final
 layout activity_force_change_password
 layout activity_forgot_password
 layout activity_home

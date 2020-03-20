@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\ddb5900e3fd5e85a53fe0c36cc0a8c75\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.stepstone.apprating:app-rating:2.3.1] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\9c9e4259f5d2e184b36fc769c309fb9a\jetified-app-rating-2.3.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.ncorti:slidetoact:0.7.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\dc8fb887476cf604af6ed904379b757b\jetified-slidetoact-0.7.0\AndroidManifest.xml:2:1-11:12
@@ -80,20 +80,20 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\kalicharan\.gradle\
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\804e3fe2a63df7f5f9586d58c8e1084a\jetified-firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\5eecd50420465d89c3a09ecbc6b74b8f\jetified-protolite-well-known-types-17.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.21.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\2dc31435e924a9e5fbba0d5cb0580396\jetified-grpc-android-1.21.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
 	package
 		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:2:11-69
@@ -194,7 +194,7 @@ ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src
 	android:name
 		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:16:22-77
 application
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:18:5-76:19
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:18:5-74:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\ddb5900e3fd5e85a53fe0c36cc0a8c75\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\ddb5900e3fd5e85a53fe0c36cc0a8c75\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.stepstone.apprating:app-rating:2.3.1] C:\Users\kalicharan\.gradle\caches\transforms-2\files-2.1\9c9e4259f5d2e184b36fc769c309fb9a\jetified-app-rating-2.3.1\AndroidManifest.xml:11:5-20
@@ -303,66 +303,58 @@ ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src
 		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:50:13-62
 	android:name
 		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:49:13-46
-activity#com.tuyuservices.tuyu.FinalActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:51:9-51
-	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:51:19-48
 activity#com.tuyuservices.tuyu.PaymentActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:52:9-53
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:51:9-53
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:52:19-50
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:51:19-50
 activity#com.tuyuservices.tuyu.CartActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:53:9-50
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:52:9-50
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:53:19-47
-activity#com.tuyuservices.tuyu.ComingSoonActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:54:9-56
-	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:54:19-53
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:52:19-47
 activity#com.tuyuservices.tuyu.ListActivitySecondary
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:55:9-59
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:53:9-59
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:55:19-56
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:53:19-56
 activity#com.tuyuservices.tuyu.TrialDatabaseActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:56:9-59
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:54:9-59
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:56:19-56
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:54:19-56
 activity#com.tuyuservices.tuyu.ListActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:57:9-59:52
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:55:9-57:52
 	android:screenOrientation
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:59:13-49
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:57:13-49
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:58:13-41
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:56:13-41
 activity#com.tuyuservices.tuyu.HomeActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:60:9-62:52
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:58:9-60:52
 	android:screenOrientation
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:62:13-49
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:60:13-49
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:61:13-41
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:59:13-41
 activity#com.tuyuservices.tuyu.LoginActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:63:9-65:52
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:61:9-63:52
 	android:screenOrientation
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:65:13-49
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:63:13-49
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:64:13-42
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:62:13-42
 activity#com.tuyuservices.tuyu.SplashActivity
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:66:9-75:20
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:64:9-73:20
 	android:screenOrientation
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:69:13-49
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:67:13-49
 	android:noHistory
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:68:13-37
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:66:13-37
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:67:13-43
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:65:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:70:13-74:29
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:68:13-72:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:71:17-69
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:69:17-69
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:71:25-66
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:69:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:73:17-77
+ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:71:17-77
 	android:name
-		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:73:27-74
+		ADDED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml:71:27-74
 uses-sdk
 INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kalicharan\Desktop\Water360\Water360-Production\Tuyu\app\src\main\AndroidManifest.xml

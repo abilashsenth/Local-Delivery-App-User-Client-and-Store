@@ -48,10 +48,8 @@
         <activity
             android:name=".MapsFinalActivity"
             android:label="@string/title_activity_maps_final" />
-        <activity android:name=".FinalActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".CartActivity" />
-        <activity android:name=".ComingSoonActivity" />
         <activity android:name=".ListActivitySecondary" />
         <activity android:name=".TrialDatabaseActivity" />
         <activity

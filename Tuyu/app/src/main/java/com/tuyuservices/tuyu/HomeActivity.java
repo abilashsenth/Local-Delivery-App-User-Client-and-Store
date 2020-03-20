@@ -54,6 +54,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     private DatabaseReference databaseReference;
     private DatabaseReference mRef;
     private ValueEventListener valueEventListener;
+    private FirebaseDatabase mFirebaseDatabase;
+
 
     //get latitude and longitude
     String latitude, longitude;
@@ -65,7 +67,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     int lengthCount =0;
 
 
-    private FirebaseDatabase mFirebaseDatabase;
 
 
     @Override
@@ -91,32 +92,23 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             getCartList(cartActive);
         }
 
-
         //initialize the list of shops
-
-        initializeWaterShops( );
-
+        retreiveData("SHOP");
 
     }
 
-    private void initializeWaterShops() {
 
+    /**
+     * retrieves data from firebase realtime db under the tag SHOP, returning lists of shops.
+     * TODO 1): make the shops displayed sorted according to distance
+     * @param x
+     */
+
+    private void retreiveData(final String x) {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
-        serviceTag = "Airconditioner";
-        retreiveData(serviceTag);
-    }
-
-    private float compareDistance(Location a, Location b){
-        return   a.distanceTo(b);
-    }
-
-
-
-    private void retreiveData(final String x) {
-
         shopList = new ArrayList<>();
         // Read from the database
         valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
@@ -127,23 +119,23 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
-                    for (DataSnapshot ds : dataSnapshot.child("SHOP").getChildren()) {
-                        String UID = (String) ds.getKey();
+
+                for (DataSnapshot ds : dataSnapshot.child("SHOP").getChildren()) {
+
+                        String UID =  ds.getKey();
+                        Log.e(TAG, (String) UID);
                         String name = null, rating = null, sampleprice = null, shopimage = null, location = null;
-                        for(DataSnapshot d:ds.child(UID).getChildren()){
-                            name = (String) d.child("NAME").getValue();
-                            Log.e(TAG, name);
-                            rating = (String) d.child("RATING").getValue();
-                            sampleprice = (String) d.child("SAMPLEPRICE").getValue();
-                            shopimage = (String) d.child("SAMPLEIMAGE").getValue();
-                            location = ((String) d.child("LAT").getValue())+((String) d.child("LONG").getValue());
-                        }
 
+                            name = (String) ds.child("NAME").getValue();
+                            rating = String.valueOf( ds.child("RATING").getValue());
+                            sampleprice = String.valueOf( ds.child("SAMPLEPRICE").getValue());
+                            shopimage = String.valueOf( ds.child("SAMPLEIMAGE").getValue());
+                            location = String.valueOf( ds.child("LAT").getValue())+(String.valueOf( ds.child("LONG").getValue()));
 
-
-                       //create instances of shops, add them into the list
+                        //create instances of shops, add them into the list
                         Shop mShop = new Shop(UID, name, rating, sampleprice, shopimage, location);
                         shopList.add(mShop);
+                        Log.e("length", String.valueOf(shopList.size()));
                         lengthCount++;
 
 
@@ -155,12 +147,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                             e.printStackTrace();
                         }
                     }
-
-
-               // setupCustomRecyclerView(shopList);
+                setupCustomRecyclerView(shopList);
                // mRef.removeEventListener(valueEventListener);
-
-
             }
 
             @Override
@@ -175,14 +163,12 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     /**
      *the recyclerview setup of the first list where the recyclerview contains an image and title
-     *
+     * listAdapter is modified to accept shop object as input
      **/
-
-
     ListAdapter listAdapter;
 
-    public void setupCustomRecyclerView(List<Service> list){
-        listAdapter = new ListAdapter(list);
+    public void setupCustomRecyclerView(List<Shop> shopList){
+        listAdapter = new ListAdapter(shopList);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
@@ -190,21 +176,13 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
         mRecyclerView.setAdapter(listAdapter);
-
-
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-
-
-                // Write your code here
-
                 //pass servicetag and then the string[position]
 
                 Log.e("Tag"," "+position );
-
                 openListSecondary(position);
 
             }
@@ -219,14 +197,20 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
+    /**
+     * gets invoked once the user selects a shop from the home activity
+     * the secondary list activity requires the UID of the shop, to correlate to it's products
+     * also if any cart objects exist, they are passed on as it is.
+     *
+     */
 
 
     private void openListSecondary(int position) {
         if(isCartEnabled){
             Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
 
-            intent.putExtra("maintag", serviceTag);
-            intent.putExtra("secondtag", "Airconditioner");
+            intent.putExtra("maintag", shopList.get(position).UID);
+            //intent.putExtra("secondtag", "Airconditioner");
 
             Log.e("Cart", "cart data from ListActivity -> ListSecondaryActivity");
 
@@ -240,8 +224,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             Log.e("Cart", "NO cart data from ListActivity -> ListSecondaryActivity");
 
             Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
-            intent.putExtra("maintag", serviceTag);
-            intent.putExtra("secondtag", "Airconditioner");
+            intent.putExtra("maintag", shopList.get(position).UID);
+            //intent.putExtra("secondtag", "Airconditioner");
             startActivity(intent);
         }
 
@@ -285,6 +269,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.action_home:
                 fragment = new HomeFragment();
+                recreate();
                 break;
            /** case R.id.action_search:
                 fragment = new SearchFragment();
@@ -371,10 +356,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             }
         };
         handler.postDelayed(r, 5000);
-
-
     }
-
 
     /**
     public void openSearch(View v){
@@ -384,19 +366,12 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.getMenu().findItem(R.id.action_search).setChecked(true);
     }
 
-
-
     public void getsearchList(){
-
-
-
         if(searchList != null) {
             Log.e("SearchedServices", String.valueOf(searchList.size()));
             setupSearchRecyclerView(searchList);
         }
     }
-
-
 
     //recyclerview for the search results in the searchfragment
     //listadapter two is the type of adapter containg add and minus buttons, ect;
@@ -405,25 +380,16 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         listAdapter = new ListAdapterTwo(myDataset, new ListAdapterTwo.ClickListener() {
             @Override
             public void onPositionClicked(int position) {
-
             }
-
             @Override
             public void onLongClicked(int position) {
-
             }
         },this);
         mRecyclerView = (RecyclerView) findViewById(R.id.search_recyclerview);
         mRecyclerView.setHasFixedSize(true);
-
-
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-
         mRecyclerView.setAdapter(listAdapter);
-
-
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -439,37 +405,24 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
+   **/
 
 
-
-     **/
 
     public void addedToCart(){
-        //when a button is clicked in recyclerview + or - or add to cart the method is executed
-        /**
-        boolean cartcontent = listAdapter.;
-        if(cartcontent){
+        //when a button is clicked in recyclerview + or - or add to cart the method is executed within the search fragment. CURRENTLY SEARCH FRAGMENT IS NOT USED
+       // boolean cartcontent = listAdapter;
+        //if(cartcontent){
             //cartList = listAdapter.returnCart();
-        }
-         **/
-
+       // }
     }
-
-
-
-    @Override
-    public void onBackPressed() {
-        //leaving it empty so that the user wont go to login.
-        //TODO Change into a better practice
-    }
-
 
     /**
      *
      * Cart fragment area
-     *
+     * getCartList prepares the cart objects in the background
      */
-
+    String shopUID;
     private void getCartList(boolean cartActive) {
         Log.e("Cart", "cart data is in homeactivty (cartscreen)");
 
@@ -477,6 +430,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         if(size!=0){
             priceList = intent.getIntArrayExtra("pricelist");
             nameList = intent.getStringArrayExtra("namelist");
+            shopUID = intent.getStringExtra("shopuid");
             isCartEnabled = true;
         }
         for(int i =0;i <size;i++){
@@ -486,21 +440,17 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         if(cartList!= null) {
             Log.e("TEMP", String.valueOf(cartList.size()));
             if(cartList.size() !=0) {
-                if(cartActive) {
-                    loadFragment(new CartFragment());
-                }
                 for(Service c :cartList){
                     Log.e("TAG", c.getServiceName());
                 }
-
-
-
-
             }
         }
     }
 
-
+    /**
+     *
+     * getCartListWithIntent prepares cart objects, along with intent to cartActivity for cart viewing
+     */
 
     private void getCartListWithIntent(boolean cartActive) {
         Log.e("Cart", "cart data is in homeactivty (cartscreen)");
@@ -509,6 +459,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         if(size!=0){
             priceList = intent.getIntArrayExtra("pricelist");
             nameList = intent.getStringArrayExtra("namelist");
+            shopUID = intent.getStringExtra("shopuid");
             isCartEnabled = true;
         }
         for(int i =0;i <size;i++){
@@ -526,7 +477,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 }
 
 
-                openCart(nameList, priceList, size);
+                openCart(nameList, priceList, size,shopUID);
 
             }else{
                 //the user hasnt added anything in the cart yet. 0 items
@@ -538,14 +489,12 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
-
-
-
-    private void openCart( String[] nameList, int[] priceList, int size) {
+    private void openCart( String[] nameList, int[] priceList, int size, String shopUID) {
         Intent cartIntent = new Intent(HomeActivity.this, CartActivity.class);
         cartIntent.putExtra("nameList", nameList);
         cartIntent.putExtra("priceList", priceList);
         cartIntent.putExtra("size", size);
+        cartIntent.putExtra("shopuid", shopUID);
         startActivity(cartIntent);
     }
 
@@ -553,22 +502,26 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         //no item in cart. user presssed button to go back to home
         loadFragment(new HomeFragment());
         bottomNavigationView.getMenu().findItem(R.id.action_home).setChecked(true);
+        recreate();
 
     }
 
 
-
-
-    //to load the user credentials for profile fragment
+    /**
+     *     to load the user credentials for profile fragment
+     *     it does not open a fragment rather a new activity
+     */
 
     private void loadProfileFragment() {
     Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
     startActivity(intent);
-
-
     }
 
 
+    /**
+     * helper methods to get essential user data if required now or in future
+     * @return
+     */
     public String LoadNum(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("NUMBER", "NULL");
@@ -595,5 +548,17 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         editor.putBoolean(key, value);
         editor.apply();
     }
+
+    @Override
+    public void onBackPressed() {
+        //leaving it empty so that the user wont go to login.
+        //TODO Change into a better practice
+    }
+
+    private float compareDistance(Location a, Location b){
+        return   a.distanceTo(b);
+    }
+
+
 
 }

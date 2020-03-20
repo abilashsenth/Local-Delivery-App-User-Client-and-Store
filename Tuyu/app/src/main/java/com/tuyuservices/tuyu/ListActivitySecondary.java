@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -19,24 +18,26 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivitySecondary extends AppCompatActivity {
 
     private static final String TAG = "SecondarylistTag";
-    String mainTag, secondaryTag;
+    String shopUID, secondaryTag;
     private String[] listString;
+
     DatabaseReference databaseReference;
     FirebaseDatabase mFirebaseDatabase;
+    ValueEventListener valueEventListener;
     DatabaseReference mRef;
+
     RecyclerView mRecyclerView;
     int lengthCount = 0;
     boolean isCartEnabled;
-    public List<Service> mList;
+    public List<Service> serviceList;
     Context mainContext;
-    List<Service> cartList;
+    List<Service> cartList = new ArrayList<>();
     RelativeLayout cartView;
 
 
@@ -46,84 +47,47 @@ public class ListActivitySecondary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_secondary);
         mainContext = getApplicationContext();
-        cartList = new ArrayList<>();
+
         isCartEnabled = getIntent().getBooleanExtra("openCart", false);
-        mainTag = getIntent().getStringExtra("maintag");
-        secondaryTag = getIntent().getStringExtra("secondtag");
+        shopUID = getIntent().getStringExtra("maintag"); // SHOP UID is the maintag
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
+
+        //retrieves services under the shop UID, and also retrieves services in cart if any
         retreiveData();
         if(isCartEnabled){
             loadCart();
         }
     }
 
-    private void loadCart() {
 
-        //when a button is clicked in recyclerview + or - or add to cart the method is executed
-        cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
-
-
-            //get carlist value from intents
-            int[] priceList = getIntent().getIntArrayExtra("pricelist");
-            String[] nameList = getIntent().getStringArrayExtra("namelist");
-            int size = getIntent().getIntExtra("size", 0);
-            for(int i = 0; i <size; i++){
-                Service s = new Service(nameList[i], priceList[i]);
-                cartList.add(s);
-            }
-
-
-
-
-            //the contents of cart are shown in the cart mini view. The number of items and total price is mandatory
-            int sizeOfCart = cartList.size();
-            int price=0;
-            for(Service s:cartList){
-                price += s.getPrice();
-            }
-            TextView cartContent = (TextView) findViewById(R.id.list_secondary_mini_cart_Count);
-            TextView cartPrice = (TextView) findViewById(R.id.list_secondary_mini_cart_price);
-            cartContent.setText(String.valueOf(sizeOfCart));
-            cartPrice.setText(String.valueOf(price));
-
-            cartView.setVisibility(View.VISIBLE);
-
-
-
-    }
-
-    ValueEventListener valueEventListener;
-
-
+    /**
+     * the activity recieves the UID via getIntent.getStringExtra();
+     * sets a valueEventListener for firebase realtime db,
+     * saves an arraylist of all the services  (ie, water can capacity) and their prices
+     */
     private void retreiveData() {
 
-        mList = new ArrayList<>();
-
-        // Read from the database
+        serviceList = new ArrayList<>();
         valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
-
-
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                for (DataSnapshot ds : dataSnapshot.child(mainTag).child(secondaryTag).getChildren()) {
+
+                for (DataSnapshot ds : dataSnapshot.child("SERVICES").child(shopUID).getChildren()) {
                     String value = (String) ds.getKey();
                     Long price = (Long) ds.getValue();
                     int pricey = price.intValue();
 
                     Service mService = new Service(value, pricey);
-                    mList.add(mService);
+                    serviceList.add(mService);
                     lengthCount++;
 
                 }
 
-                setupRecyclerView(mList);
+                //passes the existing service data to recyclerview setup
+                setupRecyclerView(serviceList);
                 mRef.removeEventListener(valueEventListener);
-
-
 
             }
 
@@ -136,11 +100,14 @@ public class ListActivitySecondary extends AppCompatActivity {
 
     }
 
-
+    /**
+     * passed on the Service list according to shops, into the recyclerview adapter
+     * ListAdapterTwo handles the data into recyclerview in the activity
+     */
 
     ListAdapterTwo listAdapter;
-    private void setupRecyclerView(List<Service> myDataset) {
-        listAdapter = new ListAdapterTwo(myDataset, new ListAdapterTwo.ClickListener() {
+    private void setupRecyclerView(List<Service> serviceListRecycler) {
+        listAdapter = new ListAdapterTwo(serviceListRecycler, new ListAdapterTwo.ClickListener() {
             @Override
             public void onPositionClicked(int position) {
 
@@ -150,7 +117,7 @@ public class ListActivitySecondary extends AppCompatActivity {
             public void onLongClicked(int position) {
 
             }
-        }, this);
+        }, this, shopUID);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view2);
         mRecyclerView.setHasFixedSize(true);
 
@@ -180,17 +147,22 @@ public class ListActivitySecondary extends AppCompatActivity {
 
     }
 
+    /**
+     * when plus, minus or add button is pressed in the recyclerview, ListAdapterTwo handles
+     * the list of services and calls this function, to show the mini cartview and updates info
+     *
+     * cartlist is the service arraylist that is passed on from adapter
+     */
     public void addedToCart(boolean isCalledFromAdapter){
-        //when a button is clicked in recyclerview + or - or add to cart the method is executed
 
-        boolean cartEmpty =  (cartList.size()==0);
         cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
-        boolean cartcontent = listAdapter.isCartEmpty;
+        boolean isCartEmpty = listAdapter.isCartEmpty;
 
-        if(!cartcontent){
+        if(!isCartEmpty){
             //cart is not empty and the cart is shown
             if(isCalledFromAdapter){
                 if(isCartEnabled){
+                    cartList.clear();
                     cartList.addAll(listAdapter.returnCart());
                 isCartEnabled=false;
                 }else {
@@ -198,8 +170,6 @@ public class ListActivitySecondary extends AppCompatActivity {
                     Service s = listAdapter.returnCart().get(size-1);
                     cartList.add(s);
                 }
-
-
 
             }else{
                 cartList.addAll(listAdapter.returnCart());
@@ -218,7 +188,7 @@ public class ListActivitySecondary extends AppCompatActivity {
             cartView.setVisibility(View.VISIBLE);
 
 
-        }else if(cartcontent){
+        }else if(isCartEmpty){
             //the contents of cart are empty, the cart mini view shall be hidden
 
             cartList.clear();
@@ -230,45 +200,84 @@ public class ListActivitySecondary extends AppCompatActivity {
     }
 
 
+    /**
+     * loads up the mini cart preview in the bottom and updates relevant info
+     */
+    private void loadCart() {
+
+        cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
+
+
+        //get carlist value from intents
+        int[] priceList = getIntent().getIntArrayExtra("pricelist");
+        String[] nameList = getIntent().getStringArrayExtra("namelist");
+        int size = getIntent().getIntExtra("size", 0);
+        for(int i = 0; i <size; i++){
+            Service s = new Service(nameList[i], priceList[i]);
+            cartList.add(s);
+        }
+
+        //the contents of cart are shown in the cart mini view. The number of items and total price is mandatory
+        int sizeOfCart = cartList.size();
+        Log.e("TAG", String.valueOf(sizeOfCart)
+        );
+        int price=0;
+        for(Service s:cartList){
+            price += s.getPrice();
+        }
+        TextView cartContent = (TextView) findViewById(R.id.list_secondary_mini_cart_Count);
+        TextView cartPrice = (TextView) findViewById(R.id.list_secondary_mini_cart_price);
+        cartContent.setText(String.valueOf(sizeOfCart));
+        cartPrice.setText(String.valueOf(price));
+
+        cartView.setVisibility(View.VISIBLE);
+
+
+
+    }
+
+
+
+    /**
+     * when the user goes back one level, the user goes to homeactivity with cart data if any exists
+     */
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-
-        openBackListActivity();
-    }
-
-    private void openBackListActivity() {
-        Intent backIntent = new Intent(ListActivitySecondary.this, ListActivity.class);
-
-
+        Intent backIntent = new Intent(ListActivitySecondary.this, HomeActivity.class);
         int size;
         size = cartList.size();
 
         if(size!=0) {
-         //get the cart list and a boolean true value and pass it onto the backintent
-         int[] priceList = new int[size];
-         String[] nameList = new String[size];
-         for (int i = 0; i < size; i++) {
-         priceList[i] = cartList.get(i).getPrice();
-         nameList[i] = cartList.get(i).getServiceName();
-         }
+            //get the cart list and a boolean true value and pass it onto the backintent
+            int[] priceList = new int[size];
+            String[] nameList = new String[size];
+            for (int i = 0; i < size; i++) {
+                priceList[i] = cartList.get(i).getPrice();
+                nameList[i] = cartList.get(i).getServiceName();
+            }
 
-             Log.e("Cart", "cart data from ListActivitySecondary -> ListActivity");
-             backIntent.putExtra("openCart", true);
-         backIntent.putExtra("pricelist", priceList);
-         backIntent.putExtra("namelist", nameList);
-         backIntent.putExtra("size", size);
-         }
+            Log.e("Cart", "cart data from ListActivitySecondary -> HomeActivity");
+            backIntent.putExtra("openCart", true);
+            backIntent.putExtra("pricelist", priceList);
+            backIntent.putExtra("namelist", nameList);
+            backIntent.putExtra("size", size);
+        }
 
         //backIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        backIntent.putExtra("SERVICETAG", mainTag);
+        backIntent.putExtra("SERVICETAG", shopUID);
         startActivity(backIntent);
 
         finish();
     }
 
 
-    //passes the cart list and the intention to open cart fragment to HomeActivity
+    /**
+     * when the user presses open cart button in the bottom cart preview
+     * passes the cart list to homeactivity, which then passes data to cartActivity
+     * along with intent extra to openCart = true
+     *
+     */
     public void openCart(View view) {
         int size;
 
@@ -281,6 +290,7 @@ public class ListActivitySecondary extends AppCompatActivity {
                 priceList[i] = cartList.get(i).getPrice();
                 nameList[i] = cartList.get(i).getServiceName();
             }
+            cartIntent.putExtra("shopuid", shopUID);
             cartIntent.putExtra("pricelist", priceList);
             cartIntent.putExtra("namelist", nameList);
             cartIntent.putExtra("size", size);

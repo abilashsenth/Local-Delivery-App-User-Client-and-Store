@@ -66,6 +66,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        /**
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
@@ -93,11 +94,15 @@ public class ListActivity extends AppCompatActivity {
 
         }
 
+         */
+
 
 
 
 
     }
+
+    /**
 
     String[] nameList;
     int[] priceList;
@@ -208,9 +213,9 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-    /**
+
      * warning: the servicetags are expected to be exactly the same as in the main database else will lead to exception
-     */
+
     private void findService() {
         switch (serviceId){
             case R.id.s01:
@@ -374,15 +379,15 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-    /**
+
      *the recyclerview setup of the first list where the recyclerview contains an image and title
      *
-     **/
+
 
 
     ListAdapter listAdapter;
 
-    public void setupCustomRecyclerView(List<Service> list){
+    public void setupCustomRecyclerView(List<Shop> list){
         listAdapter = new ListAdapter(list);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -444,5 +449,6 @@ public class ListActivity extends AppCompatActivity {
         startActivity(cartIntent);
 
     }
+     **/
 
 }

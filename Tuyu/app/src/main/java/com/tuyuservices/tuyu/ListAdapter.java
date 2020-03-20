@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
 
-    private List<Service> services;
+    private List<Shop> services;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -29,7 +29,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         }
     }
 
-    public ListAdapter(List<Service> mList){
+    public ListAdapter(List<Shop> mList){
         services  = mList;
     }
 
@@ -45,9 +45,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //TODO add image bitmap
-        Service service = services.get(position);
-        holder.title.setText(service.getServiceName());
-        holder.displayImage.setImageURI(Uri.parse(service.getImageUri()));
+        Shop service = services.get(position);
+        holder.title.setText(service.getName());
+        holder.displayImage.setImageURI(Uri.parse(service.getShopImageUrl()));
     }
 
     @Override

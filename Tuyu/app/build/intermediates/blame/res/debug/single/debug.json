@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_list.xml"
-    },
-    {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ratings.xml.flat",
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_ratings.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_list.xml"
     },
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_banner.png.flat",
@@ -140,10 +140,6 @@
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_final.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_final.xml"
-    },
-    {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
@@ -162,10 +158,6 @@
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list_secondary.xml.flat",
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_list_secondary.xml"
-    },
-    {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cart2.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_cart2.xml"
     },
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_bar_bg.png.flat",
@@ -206,10 +198,6 @@
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_header.png.flat",
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\splash_header.png"
-    },
-    {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_coming_soon.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_coming_soon.xml"
     },
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
@@ -266,6 +254,10 @@
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cart_icon.png.flat",
         "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\cart_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_cart.xml"
     },
     {
         "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_one.xml.flat",

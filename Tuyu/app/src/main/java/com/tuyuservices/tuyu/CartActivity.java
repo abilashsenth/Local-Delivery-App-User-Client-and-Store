@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class CartActivity extends AppCompatActivity {
 
@@ -28,18 +29,20 @@ public class CartActivity extends AppCompatActivity {
     int size;
     String[] nameList;
     String timing;
+    String shopUID;
     private SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart2);
+        setContentView(R.layout.activity_cart);
         List<Service> mList = new ArrayList<>();
         timing = "As soon as possible";
         pricelist = getIntent().getIntArrayExtra("priceList");
         nameList = getIntent().getStringArrayExtra("nameList");
         size = getIntent().getIntExtra("size", 0);
+        shopUID = getIntent().getStringExtra("shopuid");
         if(size!=0){
             for(int i =0;i<size;i++){
                 Service s = new Service(nameList[i], pricelist[i]);
@@ -52,8 +55,8 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void displayRecyclerView(List<Service> mList) {
-        //create a new AdapterClass
-        mRecyclerView2 = (RecyclerView) findViewById(R.id.yeehaw);
+        //create a new
+        mRecyclerView2 = (RecyclerView) findViewById(R.id.cartOrderView);
         mAdapter = new CartListAdapter(mList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView2.setLayoutManager(mLayoutManager);
@@ -112,6 +115,9 @@ public class CartActivity extends AppCompatActivity {
         String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
         String slottiming = timing;
 
+        String orderID = "O"+String.valueOf(randomize());
+        String shopUID = this.shopUID;
+
         String phone = LoadNum();
         String name = LoadName();
         String address = LoadAddress();
@@ -126,6 +132,8 @@ public class CartActivity extends AppCompatActivity {
         intent.putExtra("nameList", nameList);
         intent.putExtra("priceList", pricelist);
         intent.putExtra("size", size);
+        intent.putExtra("orderuid", orderID);
+        intent.putExtra("shopuid", shopUID);
         startActivity(intent);
 
 
@@ -144,6 +152,13 @@ public class CartActivity extends AppCompatActivity {
     public String LoadAddress(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("address", "NULL");
+    }
+
+    public int randomize(){
+        final int min = 100000;
+        final int max = 999999;
+        final int random = new Random().nextInt((max - min) + 1) + min;
+        return random;
     }
 
 

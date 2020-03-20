@@ -24,7 +24,7 @@ public class PaymentActivity extends AppCompatActivity {
     int size;
     List<Service> cartList;
     int totalPrice;
-    String services;
+    String services, shopUID, orderUID;
 
 
 
@@ -41,6 +41,8 @@ public class PaymentActivity extends AppCompatActivity {
         priceList = getIntent().getIntArrayExtra("priceList");
         nameList = getIntent().getStringArrayExtra("nameList");
         size = getIntent().getIntExtra("size", 0);
+        orderUID= getIntent().getStringExtra("orderuid");
+        shopUID = getIntent().getStringExtra("shopuid");
         cartList = new ArrayList<>();
         for(int i =0; i <size;i++){
             Service s = new Service(nameList[i], priceList[i]);
@@ -123,7 +125,18 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onSlideCompleteAnimationEnded(@NonNull SlideToActView view) {
                 Log.e("Tag", "\n" + " onSlideCompleteAnimationEnded");
-                goToFinalActivity();
+                Intent intent = new Intent(PaymentActivity.this, MapsFinalActivity.class);
+                intent.putExtra("number", number);
+                intent.putExtra("name", name);
+                intent.putExtra("address", address);
+                intent.putExtra("date", date);
+                intent.putExtra("time", time);
+                intent.putExtra("timepreference", slotTiming );
+                intent.putExtra("services", services);
+                intent.putExtra("totalprice", totalPrice);
+                intent.putExtra("orderuid", orderUID);
+                intent.putExtra("shopuid", shopUID);
+                startActivity(intent);
             }
 
             @Override
@@ -138,19 +151,7 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
 
-    private void goToFinalActivity() {
-        Intent intent = new Intent(PaymentActivity.this, MapsFinalActivity.class);
-        intent.putExtra("number", number);
-        intent.putExtra("name", name);
-        intent.putExtra("address", address);
-        intent.putExtra("date", date);
-        intent.putExtra("time", time);
-        intent.putExtra("timepreference", slotTiming );
-        intent.putExtra("services", services);
-        intent.putExtra("totalprice", totalPrice);
-        startActivity(intent);
 
-    }
 
 
 }

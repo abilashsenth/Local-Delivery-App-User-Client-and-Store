@@ -34,7 +34,7 @@ public class MapsFinalActivity extends FragmentActivity implements OnMapReadyCal
 
     private GoogleMap mMap;
 
-    String number, name, address, date, time, timepreference, services;
+    String number, name, address, date, time, timepreference, services, orderUID, shopUID;
     int totalprice;
     TextView statusText;
     private static final String TAG = "Fbase" ;
@@ -67,12 +67,16 @@ public class MapsFinalActivity extends FragmentActivity implements OnMapReadyCal
         timepreference = intent.getStringExtra("timepreference");
         services = intent.getStringExtra("services");
         totalprice= intent.getIntExtra("totalprice",0);
+        orderUID = intent.getStringExtra("orderuid");
+        shopUID = intent.getStringExtra("shopuid");
+
+
         statusText = (TextView) findViewById(R.id.statustext);
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
 
-        writeNewService(number, name, address, date, time, timepreference, totalprice, services);
+        writeNewService(number, name, address, date, time, timepreference, totalprice, services, orderUID, shopUID);
         checkCoarseAddress();
         checkDbChange();
 
@@ -112,7 +116,7 @@ public class MapsFinalActivity extends FragmentActivity implements OnMapReadyCal
                 // whenever data at this location is updated.
                 Log.e("CHECK", "CHECK1");
 
-                for (DataSnapshot ds : dataSnapshot.child("STATUS").getChildren()) {
+                for (DataSnapshot ds : dataSnapshot.child("STATUS").child("ORDERID").getChildren()) {
                     String key = (String) ds.getKey();
                     String value = (String) ds.getValue();
                     if (key.equals(number)) {
@@ -195,15 +199,17 @@ public class MapsFinalActivity extends FragmentActivity implements OnMapReadyCal
 
 
     private void writeNewService ( String number, String name, String address, String date,
-                                   String time, String timepreference, int totalprice, String services){
+                                   String time, String timepreference, int totalprice, String services, String orderUID, String shopUID){
 
-        databaseReference.child("ORDERSPLACED").child(number).child("NAME").setValue(name);
-        databaseReference.child("ORDERSPLACED").child(number).child("ADDRESS").setValue(address);
-        databaseReference.child("ORDERSPLACED").child(number).child("DATE").setValue(date);
-        databaseReference.child("ORDERSPLACED").child(number).child("TIME").setValue(time);
-        databaseReference.child("ORDERSPLACED").child(number).child("TIMEPREFERENCE").setValue(timepreference);
-        databaseReference.child("ORDERSPLACED").child(number).child("SERVICESORDERED").setValue(services);
-        databaseReference.child("ORDERSPLACED").child(number).child("TOTALAMOUNT").setValue(totalprice);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("NAME").setValue(name);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("NUMBER").setValue(number);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("SHOPUID").setValue(shopUID);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("ADDRESS").setValue(address);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("DATE").setValue(date);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("TIME").setValue(time);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("TIMEPREFERENCE").setValue(timepreference);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("SERVICESORDERED").setValue(services);
+        databaseReference.child("ORDERSPLACED").child(orderUID).child("TOTALAMOUNT").setValue(totalprice);
     }
 
 
@@ -255,7 +261,6 @@ public class MapsFinalActivity extends FragmentActivity implements OnMapReadyCal
     }
 
     private void moveMap() {
-        // Add a marker in Sydney and move the camera
         Log.e("LATLONG", " " +latitude+longitude);
         LatLng userHome = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(userHome).title("Home"));

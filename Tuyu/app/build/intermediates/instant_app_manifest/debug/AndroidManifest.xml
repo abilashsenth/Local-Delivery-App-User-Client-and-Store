@@ -67,10 +67,8 @@
         <activity
             android:name="com.tuyuservices.tuyu.MapsFinalActivity"
             android:label="@string/title_activity_maps_final" />
-        <activity android:name="com.tuyuservices.tuyu.FinalActivity" />
         <activity android:name="com.tuyuservices.tuyu.PaymentActivity" />
         <activity android:name="com.tuyuservices.tuyu.CartActivity" />
-        <activity android:name="com.tuyuservices.tuyu.ComingSoonActivity" />
         <activity android:name="com.tuyuservices.tuyu.ListActivitySecondary" />
         <activity android:name="com.tuyuservices.tuyu.TrialDatabaseActivity" />
         <activity
