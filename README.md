@@ -9,7 +9,7 @@ The code is open source and can be used freely
 
 Tech stack Used: Google Android SDK, Firebase, Google maps API
 
-This project was made By Abbilashh Senthilkumar @abilashsenth / @thenextbiggeek
+This project was SOLELY made By Abbilashh Senthilkumar @abilashsenth / @thenextbiggeek
 
 
 # User app (TUYU)
