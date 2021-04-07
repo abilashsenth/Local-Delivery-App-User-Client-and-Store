@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\kalicharan\\.gradle\\caches\\transforms-2\\files-2.1\\9c7ac265fa92c081f7ac25ccaf3ef123\\appcompat-1.1.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\kalicharan\\.gradle\\caches\\transforms-2\\files-2.1\\95c27f1e561f59170f577bf124144243\\appcompat-1.1.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

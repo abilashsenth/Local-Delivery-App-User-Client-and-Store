@@ -1,302 +1,450 @@
 [
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ratings.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_ratings.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_list.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_banner.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\main_banner.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_bar.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\login_bar.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plumbing_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\plumbing_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blue_dotted_lines.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\blue_dotted_lines.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splashx.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\splashx.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_one.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\list_item_type_one.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_trial_database.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_trial_database.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_deep_clean_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\deep_clean_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_place_order.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\place_order.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_skip_now.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\login_skip_now.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cctv_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\cctv_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map_address.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_map_address.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_payment.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_payment.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_bar_home.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\search_bar_home.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\plus_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_screen_header.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\login_screen_header.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_profile.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_bar.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\login_bar.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_payment_method_view.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\payment_method_view.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_computer_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\computer_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_recyclertextview.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\recyclertextview.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_water360_logo.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\water360_logo.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_bar_home.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\search_bar_home.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\add_icon.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\raw_awsconfiguration.json.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\raw\\awsconfiguration.json"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_details_banner.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_details_banner.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_component_tabbar_badge.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\component_tabbar_badge.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_card1.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\home_card1.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cognito.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_cognito.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\logout_button.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_cart.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\fragment_cart.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_adder_sub_bg.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\adder_sub_bg.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_carpentry_logo.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\carpentry_logo.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ongoing_home_header_indicator.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\ongoing_home_header_indicator.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\profile_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_super_thirty_five_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\super_thirty_five_button.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_cart.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\content_cart.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\fragment_search.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_arrow.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\login_arrow.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\raw_amplifyconfiguration.json.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\raw\\amplifyconfiguration.json"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_previous_header.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\profile_previous_header.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_skip_now.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\login_skip_now.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_footer.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\home_footer.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_flash_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\flash_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_confirm_your_address.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\confirm_your_address.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_logo.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\splash_logo.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_status_order_placed.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_status_order_placed.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_super_thirty_five_button_highlighted.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\super_thirty_five_button_highlighted.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_recyclertextview.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\recyclertextview.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_address_card_one.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\address_card_one.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_home.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\plus_icon.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_track_onging_orders.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\track_onging_orders.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list_secondary.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_list_secondary.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_status_waiting_to_be_assigned.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_status_waiting_to_be_assigned.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_bar_bg.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\bottom_bar_bg.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cart_card.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\cart_card.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_electrical_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\electrical_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_cart.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_arrow.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\login_arrow.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_header.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\profile_header.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map_address.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_map_address.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_placed_animation_logo.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_placed_animation_logo.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pest_control_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\pest_control_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps_final.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_maps_final.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_order.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\list_item_type_order.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_aircon_logo.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\aircon_logo.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_homeicon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\homeicon.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_header.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\splash_header.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_divider.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\divider.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_homeicon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\homeicon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_as_soon_as_possible_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\as_soon_as_possible_button.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_h1.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\login_h1.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_minus_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\minus_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_bar.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\shop_bar.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_divider_large.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\divider_large.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_footer.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\home_footer.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_header.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\home_header.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_packers_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\packers_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_status_water_on_the_way.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_status_water_on_the_way.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_track_order_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\track_order_button.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_red_dot.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\notification_red_dot.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_minus_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\minus_icon.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_appliances_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\appliances_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_outlets_near_you.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\outlets_near_you.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_divider_vertical.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\divider_vertical.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cart_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\cart_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_home_header.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\list_item_home_header.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cart.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_cart.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_as_soon_as_possible_highlighted_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\as_soon_as_possible_highlighted_button.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_one.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\list_item_type_one.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_trial_database.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_trial_database.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_icon.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\search_icon.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_detail_bg.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_detail_bg.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_two.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\list_item_type_two.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_cart.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\fragment_cart.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_order_track.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_order_track.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list_secondary.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_list_secondary.xml"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_cart.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\content_cart.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_empty_can.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\empty_can.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_adder_sub_bg.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\adder_sub_bg.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_login_background.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\profile_login_background.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_card1.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\home_card1.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_stay_hydrated.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\stay_hydrated.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_profile.xml.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_bg.png.flat",
-        "source": "C:\\Users\\kalicharan\\Desktop\\Water360\\Water360-Production\\Tuyu\\app\\src\\main\\res\\drawable\\login_bg.png"
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_please_ensure.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\please_ensure.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_red_dot.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\notification_red_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_track_logo.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\track_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reorder_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\reorder_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_order_status_image_confirmed.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\order_status_image_confirmed.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_confirm_order.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\confirm_order.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_feedback_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\feedback_button.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_payment.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_payment.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ratings.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_ratings.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cart_header.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\cart_header.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\profile_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_continue_button.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\continue_button.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_super_thirty_five_enabled.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\super_thirty_five_enabled.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cart_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\cart_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_component_tabbar_badge.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\component_tabbar_badge.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_track.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\fragment_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_home_recycler_layout.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\home_recycler_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_cart.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\list_item_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_header.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\home_header.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_bg.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\login_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_select_time_pref.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\select_time_pref.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loader_gif.gif.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\loader_gif.gif"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_proceed_to_billing.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\proceed_to_billing.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_icon.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\search_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_bar_bg.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\bottom_bar_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_type_two.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\list_item_type_two.xml"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_time_pref_chooser_bg.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\time_pref_chooser_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_your_address.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\your_address.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_location_marker.png.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\drawable\\my_location_marker.png"
+    },
+    {
+        "merged": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_coming_soon.xml.flat",
+        "source": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\Tuyu\\app\\src\\main\\res\\layout\\activity_coming_soon.xml"
     }
 ]

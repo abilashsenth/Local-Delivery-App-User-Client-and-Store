@@ -6,11 +6,71 @@
 
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call Customer"
+        android:id="@+id/list_item_type_one_call_customer"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_type_one_oid"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_type_one_shopID"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_type_one_status"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
         android:id="@+id/list_item_type_one_name"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_type_one_number"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_type_one_address"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
@@ -40,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/list_item_type_one_timepreference"
+        android:id="@+id/list_item_type_one_timepref"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
@@ -50,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/list_item_type_one_address"
+        android:id="@+id/list_item_type_one_totalamt"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
@@ -60,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/list_item_type_one_number"
+        android:id="@+id/list_item_type_one_paymentMethod"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
@@ -70,17 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/list_item_type_one_serviceprice"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:layout_weight="31"
-        android:layout_margin="10sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAMPLE"
-        android:id="@+id/list_item_type_one_services"
+        android:id="@+id/list_item_type_one_productsOrdered"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"

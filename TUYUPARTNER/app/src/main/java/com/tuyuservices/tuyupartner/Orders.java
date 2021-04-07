@@ -1,24 +1,57 @@
 package com.tuyuservices.tuyupartner;
 
 import java.io.Serializable;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 
 public class Orders implements Serializable {
-    String address, name, time, date, timepreference, servicesordered, totalAmount, number;
+    String OID, shopID, status, name, number, address, date, time, timepreference, totalAmount, paymentMethod, totalProducts, latitude, longitude;
 
-    public Orders(){
 
+
+    public Orders(String OID,String shopID, String status, String name, String number, String address, String date,
+                  String time, String timepreference, String totalAmount, String paymentMethod, String totalProducts, String latitude, String longitude){
+        this.OID = OID;
+        this.shopID = shopID;
+        this.status = status;
+        this.name = name;
+        this.number = number;
+        this.address = address;
+        this.date = date;
+        this.time = time;
+        this.timepreference = timepreference;
+        this.totalAmount = totalAmount;
+        this.paymentMethod = paymentMethod;
+        this.totalProducts = totalProducts;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public Orders(String name, String address, String time, String date,
-                  String timepreference, String servicesordered, String totalAmount, String number){
-        this.name = name;
-        this.address = address;
-        this.time = time;
-        this.date = date;
-        this.number = number;
-        this.timepreference = timepreference;
-        this.servicesordered = servicesordered;
-        this.totalAmount = totalAmount;
+    public Orders() {
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getTotalProducts() {
+        return totalProducts;
+    }
+
+    public void setTotalProducts(String totalProducts) {
+        this.totalProducts = totalProducts;
     }
 
     public String getNumber() {
@@ -45,6 +78,23 @@ public class Orders implements Serializable {
         return time;
     }
 
+
+    public String getOID() {
+        return OID;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public String getShopID() {
+        return shopID;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
     public String getTimepreference() {
         return timepreference;
     }
@@ -52,6 +102,29 @@ public class Orders implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public void setOID(String OID) {
+        this.OID = OID;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+
+
+    public void setShopID(String shopID) {
+        this.shopID = shopID;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTimepreference(String timepreference) {
+        this.timepreference = timepreference;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -65,24 +138,18 @@ public class Orders implements Serializable {
         this.time = time;
     }
 
-    public void setTimepreference(String timepreference) {
-        this.timepreference = timepreference;
-    }
 
     public String getTotalAmount() {
         return totalAmount;
     }
 
-    public String getServicesordered() {
-        return servicesordered;
-    }
 
-    public void setServicesordered(String servicesordered) {
-        this.servicesordered = servicesordered;
-    }
+
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
     public void setTotalAmount(String totalAmount) {
         this.totalAmount = totalAmount;
     }
 }
+
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +30,8 @@ public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
         });
     }
 
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
     @Override
     public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
         View child = rv.findChildViewUnder(e.getX(), e.getY());
@@ -53,4 +56,6 @@ public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
         void onLongClick(View view, int position);
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 }

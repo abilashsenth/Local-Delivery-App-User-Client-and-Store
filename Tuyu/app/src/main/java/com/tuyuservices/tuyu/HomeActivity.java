@@ -1,23 +1,20 @@
 package com.tuyuservices.tuyu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -26,54 +23,45 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener,   HomeRecyclerAdapter.ItemClickListener {
 
-    private static final int PERMISSION_FINE_LOCATION = 23;
-    Boolean locationPermission;
     FrameLayout fragmentcontainer;
     BottomNavigationView bottomNavigationView;
-    TextView addressLine1, addressLine2;
-    RecyclerView mRecyclerView, mRecyclerView2;
-    boolean isCartEnabled= false;
+    RecyclerView mRecyclerView;
     Intent intent;
     int[] priceList;
     String[] nameList;
     List<Service> cartList;
-    private CartListAdapter mAdapter;
     boolean cartActive;
     boolean openCart;
     private SharedPreferences sharedPreferences;
-    private ViewGroup container;
-    View view; //pass the correct layout name for the fragmen
+    String userID;
+    LinearLayout mProgressBar;
+    LinearLayout mLinearLayout;
+
+    //Database references
+    DatabaseReference databaseReference;
+    private ValueEventListener valueEventListener, valueEventListenerTrack;
     private ArrayList<Shop> shopList;
-    private DatabaseReference databaseReference;
-    private DatabaseReference mRef;
-    private ValueEventListener valueEventListener;
-    private FirebaseDatabase mFirebaseDatabase;
-
-
-    //get latitude and longitude
-    String latitude, longitude;
-
-    //implement listview in home
-    private String TAG = "LISTHOME";
-    private String serviceTag;
-    String[] listString;
-    int lengthCount =0;
-
-
+    private ArrayList<Shop> geoSortedShops;
+    private String TAG = "HOMEACTIVITY";
+    private ListAdapterOrders listAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         loadFragment(new HomeFragment());
+        //get userID
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        userID =   sharedPreferences.getString("NUMBER", "NULL");
+
 
 
         cartList = new ArrayList<>();
@@ -82,73 +70,353 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         cartActive = getIntent().getBooleanExtra("cartActive", false);
-        openCart = getIntent().getBooleanExtra("openCartx", false);
-        latitude = getIntent().getStringExtra("latitude");
-        longitude = getIntent().getStringExtra("longitude");
+        openCart = getIntent().getBooleanExtra("openCart", false);
+        mProgressBar = findViewById(R.id.loaderview);
+        mLinearLayout = (LinearLayout) findViewById(R.id.home_fragment_main);
+
+        retreiveShopData();
+        retrieveUnfinishedOrders(false);
+
+
 
         if(openCart){
-            getCartListWithIntent(cartActive);
-        }else {
-            getCartList(cartActive);
+            openCartFragment(cartActive);
         }
+    }
 
-        //initialize the list of shops
-        retreiveData("SHOP");
+    @Override
+    protected void onResume() {
+        super.onResume();
+        retrieveUnfinishedOrders(false);
+
+
+    }
+
+    /**
+     * loading a fragment when user clicks bottomnavigationview
+     **/
+
+    private boolean loadFragment(Fragment fragment){
+        //swtichfragment
+        if(fragment!=null){
+            getSupportFragmentManager().
+                    beginTransaction().
+                    replace(R.id.fragment_container, fragment).
+                    commit();
+
+            return true;
+        }
+        return false;
 
     }
 
 
+    public void openMapAddressActivity(){
+        Intent mHomeIntent = new Intent(HomeActivity.this, MapAddressActivity.class);
+        startActivity(mHomeIntent);
+    }
+
+
+
+    /** when the user clicks on the bottom navigation bar, the fragment according to that is loaded up
+     * and then inflated with the local method loadFragment();
+     * all the fragment related code is in HomeActivity - home - search- cart and user
+     * **/
+
+    public void loadTrackFragment(){
+        Fragment fragment = new TrackFragment();
+        retrieveUnfinishedOrders(true);
+        loadFragment(fragment);
+        bottomNavigationView.setSelectedItemId(R.id.action_track);
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        //when a bottom navigation button is selected this is called
+        Fragment fragment  = null;
+        switch (menuItem.getItemId()){
+
+            case R.id.action_home:
+                fragment = new HomeFragment();
+                finish();
+                overridePendingTransition( 0, 0);
+                startActivity(getIntent());
+                overridePendingTransition( 0, 0);
+                break;
+
+            case R.id.action_track:
+                fragment = new TrackFragment();
+                retrieveUnfinishedOrders(true);
+                break;
+
+            case R.id.action_cart:
+                fragment = new CartFragment();
+                openCartFragment(cartActive);
+                break;
+
+            case R.id.action_profile:
+                fragment = new ProfileFragment();
+                Log.e("LOAD", "loadprofilefragment");
+                loadProfileFragment();
+                break;
+        }
+        return loadFragment(fragment);
+    }
+
+    /**Track fragment -
+     * gets all order objects of the userID that is not finished
+     *
+     * **/
+    Orders orders;
+    ArrayList<Orders> trackOrderList;
+    private void retrieveUnfinishedOrders(final boolean isCalledFromTrackFragment) {
+        Log.e("USERIDHOME", userID);
+        trackOrderList= new ArrayList<>();
+        valueEventListenerTrack =  databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.child("ORDERSPLACED").getChildren()) {
+                    if(String.valueOf(ds.child("NUMBER").getValue()).equals(userID)){
+                        Log.e("VALUEOF", String.valueOf(ds.child("STATUS").getValue()));
+                        if(!String.valueOf(ds.child("STATUS").getValue()).equals("FINISHED")){
+                            String OID = ds.getKey();
+                            String shopID = String.valueOf(ds.child("SHOPID").getValue());
+                            String shopName = String.valueOf(dataSnapshot.child("SHOP").child(shopID).child("NAME").getValue());
+                            String status = String.valueOf(ds.child("STATUS").getValue());
+                            String name = String.valueOf(ds.child("NAME").getValue());
+                            String number = String.valueOf(ds.child("NUMBER").getValue());
+                            String address = String.valueOf(ds.child("ADDRESS").getValue());
+                            String date = String.valueOf(ds.child("DATE").getValue());
+                            String time = String.valueOf(ds.child("TIME").getValue());
+                            String timePreference = String.valueOf(ds.child("TIMEPREFERENCE").getValue());
+                            String totalAmount = String.valueOf(ds.child("TOTALAMOUNT").getValue());
+                            String paymentMethod = String.valueOf(ds.child("PAYMENTMETHOD").getValue());
+                            String totalProducts = "";
+                            StringBuilder sb = new StringBuilder();
+
+                            for (DataSnapshot p : ds.child("ORDERS").getChildren()) {
+                                String productName = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("NAME").getValue());
+                                String productPrice = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("PRICE").getValue());
+                                String productThumbnailURL = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("THUMBNAILURL").getValue());
+                                Log.e("PRODUCTNAME", String.valueOf(p.getValue()));
+                                totalProducts = sb.append(productName + "/-/ ").toString();
+                            }
+                            orders = new Orders(OID, shopName, status, name, number, address, date, time, timePreference, totalAmount, paymentMethod, totalProducts);
+                            trackOrderList.add(orders);
+                        }
+                    }
+                }
+                databaseReference.removeEventListener(valueEventListener);
+                if(isCalledFromTrackFragment){
+                    setupTrackOrderRecyclerView(trackOrderList);
+                }else{
+                    setupHomeHeaderRecyclerView(trackOrderList);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Home- Trackorderlist", "Failed to read value.", databaseError.toException());
+            }
+        });
+    }
+
+    RecyclerView mRecyclerViewTrack;
+    private void setupTrackOrderRecyclerView(ArrayList<Orders> trackOrderList) {
+        listAdapter = new ListAdapterOrders(trackOrderList, getApplicationContext(), true);
+        mRecyclerViewTrack = (RecyclerView) findViewById(R.id.recycler_views_track_unfinished_orders);
+        mRecyclerViewTrack.setHasFixedSize(true);
+
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerViewTrack.setLayoutManager(mLayoutManager);
+
+
+        mRecyclerViewTrack.setAdapter(listAdapter);
+        mRecyclerViewTrack.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerViewTrack, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Log.e("Tag"," "+position );
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+    }
+
     /**
-     * retrieves data from firebase realtime db under the tag SHOP, returning lists of shops.
-     * TODO 1): make the shops displayed sorted according to distance
-     * @param x
+     * Home Header Part-
+     * works to show the latest unfinished order preview from tracking list
+     * and also shows the user address.
+     * permits user to click the map icon and address can be changed with location service help
      */
 
-    private void retreiveData(final String x) {
+    ListAdapterHomeHeader mListAdapterHomeHeader;
+    RecyclerView mRecyclerViewHomeHeader;
+    private void setupHomeHeaderRecyclerView(ArrayList<Orders> trackOrderList) {
+        //note: trackOrderList consists of all the orders that are unfinished. The  homeHeaderUI shows only the latestOne aka index size-1
+        String address = loadAddress();
+        String name = loadName();
+        Orders order0 = trackOrderList.get(trackOrderList.size()-1);
+        HomeHeader mHomeHeader = new HomeHeader(name, address, true, order0);
+        ArrayList<HomeHeader> homeHeaderArrayList = new ArrayList<>();
+        homeHeaderArrayList.add(mHomeHeader);
+        setupHomeHeaderRecyclerViewAdapter(homeHeaderArrayList);
+    }
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference();
+
+    private void setupHomeHeaderRecyclerViewAdapter(ArrayList<HomeHeader> homeHeaderArrayList) {
+        mListAdapterHomeHeader = new ListAdapterHomeHeader(homeHeaderArrayList, this);
+        mRecyclerViewHomeHeader = (RecyclerView) findViewById(R.id.recycler_view_home_header);
+        mRecyclerViewHomeHeader.setHasFixedSize(true);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerViewHomeHeader.setLayoutManager(mLayoutManager);
+        mRecyclerViewHomeHeader.setAdapter(mListAdapterHomeHeader);
+        mRecyclerViewHomeHeader.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerViewHomeHeader, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Log.e("Tag"," "+position );
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+    }
+
+
+
+
+    /**home fragment -
+     * when an icon in the list is clicked - openList(View V);
+     * **/
+    //setting up recyclerviews of shops available within the area
+    Shop shop;
+    private void retreiveShopData() {
         shopList = new ArrayList<>();
         // Read from the database
-        valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
 
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-
-
+                //value is the shopUniqueID embedded into each shop object inside the arraylists
                 for (DataSnapshot ds : dataSnapshot.child("SHOP").getChildren()) {
+                    String value = (String) ds.getKey();
+                    Log.e("HOMEACTIVITY_SHOPSID", value);
+                    shop = new Shop(value,String.valueOf(ds.child("LAT").getValue()),
+                           String.valueOf( ds.child("LONG").getValue()),
+                            String.valueOf(ds.child("NAME").getValue()),
+                            String.valueOf(ds.child("RATING").getValue()),
+                            String.valueOf(ds.child("SAMPLEPRICE").getValue()),
+                            String.valueOf(ds.child("SHOPIMAGE").getValue()));
+                    shopList.add(shop);
 
-                        String UID =  ds.getKey();
-                        Log.e(TAG, (String) UID);
-                        String name = null, rating = null, sampleprice = null, shopimage = null, location = null;
+                }
+                //setupCustomRecyclerView(serviceList);
+                databaseReference.removeEventListener(valueEventListener);
+                geoSortedShops = geoSortShops(shopList);
+                //assining the geosorted shops into the recyclerview
+                setRecyclerView(geoSortedShops);
+            }
 
-                            name = (String) ds.child("NAME").getValue();
-                            rating = String.valueOf( ds.child("RATING").getValue());
-                            sampleprice = String.valueOf( ds.child("SAMPLEPRICE").getValue());
-                            shopimage = String.valueOf( ds.child("SAMPLEIMAGE").getValue());
-                            location = String.valueOf( ds.child("LAT").getValue())+(String.valueOf( ds.child("LONG").getValue()));
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("HomeActivity- Shoplist", "Failed to read value.", error.toException());
+            }
+        });
 
-                        //create instances of shops, add them into the list
-                        Shop mShop = new Shop(UID, name, rating, sampleprice, shopimage, location);
-                        shopList.add(mShop);
-                        Log.e("length", String.valueOf(shopList.size()));
-                        lengthCount++;
+    }
+
+    private ArrayList<Shop> geoSortShops(ArrayList<Shop> shopList) {
+        //retrieve user latitude and longitude from sharedPreferences
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        float lat = Float.parseFloat(sharedPreferences.getString("latitude", "null"));
+        float lon = Float.parseFloat(sharedPreferences.getString("longitude", "null"));
+        //gets raw shop data from the entire db, checks for shops located with a distance <= 5km and sorts them
+        LocationService mLocationService = new LocationService(shopList,lat,lon );
+        return mLocationService.sortLocation(5);
+    }
+
+    HomeRecyclerAdapter homeRecyclerAdapter;
+    private void setRecyclerView(ArrayList<Shop> geoSortedShops) {
+        //the recyclerview in the home fragment uses HomeRecyclerAdapter and home_recycler_layout.xml
+        mRecyclerView = (RecyclerView) findViewById(R.id.home_recycler);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        homeRecyclerAdapter = new HomeRecyclerAdapter(this, geoSortedShops, getApplicationContext());
+        homeRecyclerAdapter.setClickListener(this);
+        mRecyclerView.setAdapter(homeRecyclerAdapter);
+        bottomNavigationView.setVisibility(View.VISIBLE);
+        mLinearLayout = findViewById(R.id.home_fragment_main);
+        mProgressBar = findViewById(R.id.loaderview);
+        mLinearLayout.setVisibility(View.VISIBLE);
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        openList(geoSortedShops.get(position).shopId);
+    }
 
 
-                        //TODO make sure the image uri will be dynamic
-                        Uri uri = Uri.parse("android.resource://com.tuyuservices.tuyu/drawable/homeicon");
-                        try {
-                            InputStream stream = getContentResolver().openInputStream(uri);
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
+    public void openList(String shopId){
+
+        Intent listIntent = new Intent(HomeActivity.this, ListActivitySecondary.class);
+        if(cartList.size()!=0){
+            Log.e("CART", "cart data from HomeActivity to ListActivity");
+            listIntent.putExtra("openCart", true);
+            listIntent.putExtra("pricelist", priceList);
+            listIntent.putExtra("namelist", nameList);
+            listIntent.putExtra("size", cartList.size());
+
+        }else{
+            listIntent.putExtra("openCart", false);
+            Log.e("CART", "NO cart data from HomeActivity to ListActivity");
+        }
+
+        listIntent.putExtra("SHOPID", shopId);
+        startActivity(listIntent);
+
+    }
+
+
+
+
+
+    /**
+     *
+     * Cart fragment area
+     *
+     */
+    ValueEventListener cartValueEventListener;
+    private void openCartFragment(boolean cartActive) {
+        //checks whether USERCART data exists under the USERID
+        cartValueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("USERCART").child(userID).hasChildren()) {
+                   //cart value exists but could be null value. therefore loop and check for non null value to confirm prescence of a cart list data
+                    for(DataSnapshot ds : dataSnapshot.child("USERCART").child(userID).getChildren()){
+                        String shopID = String.valueOf(ds.getKey());
+                        Log.e("SHOPID",  shopID);
+                        for(DataSnapshot mDs: ds.getChildren()){
+                            if(!String.valueOf(mDs.getValue()).equals("null")){
+                                Log.e("TEMP", "Cart object exists");
+                                openCart(shopID, userID);
+                            }
                         }
                     }
-                setupCustomRecyclerView(shopList);
-               // mRef.removeEventListener(valueEventListener);
+
+                }
+                databaseReference.removeEventListener(cartValueEventListener);
             }
 
             @Override
@@ -161,340 +429,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
-    /**
-     *the recyclerview setup of the first list where the recyclerview contains an image and title
-     * listAdapter is modified to accept shop object as input
-     **/
-    ListAdapter listAdapter;
-
-    public void setupCustomRecyclerView(List<Shop> shopList){
-        listAdapter = new ListAdapter(shopList);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-
-
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecyclerView.setAdapter(listAdapter);
-        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                //pass servicetag and then the string[position]
-
-                Log.e("Tag"," "+position );
-                openListSecondary(position);
-
-            }
-
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        }));
-
-
-    }
-
-
-    /**
-     * gets invoked once the user selects a shop from the home activity
-     * the secondary list activity requires the UID of the shop, to correlate to it's products
-     * also if any cart objects exist, they are passed on as it is.
-     *
-     */
-
-
-    private void openListSecondary(int position) {
-        if(isCartEnabled){
-            Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
-
-            intent.putExtra("maintag", shopList.get(position).UID);
-            //intent.putExtra("secondtag", "Airconditioner");
-
-            Log.e("Cart", "cart data from ListActivity -> ListSecondaryActivity");
-
-
-            intent.putExtra("openCart", true);
-            intent.putExtra("pricelist", priceList);
-            intent.putExtra("namelist", nameList);
-            intent.putExtra("size", size);
-            startActivity(intent);
-        }else{
-            Log.e("Cart", "NO cart data from ListActivity -> ListSecondaryActivity");
-
-            Intent intent = new Intent(HomeActivity.this, ListActivitySecondary.class);
-            intent.putExtra("maintag", shopList.get(position).UID);
-            //intent.putExtra("secondtag", "Airconditioner");
-            startActivity(intent);
-        }
-
-
-    }
-
-    /**
-     * loading a fragment when user clicks bottomnavigationview
-     *
-     *
-     **/
-
-    private boolean loadFragment(Fragment fragment){
-        //swtichfragment
-        if(fragment!=null){
-            getSupportFragmentManager().
-                    beginTransaction().
-                    replace(R.id.fragment_container, fragment).
-                    commit();
-            return true;
-
-        }
-        return false;
-
-    }
-
-
-    /** when the user clicks on the bottom navigation bar, the fragment according to that is loaded up
-     * and then inflated with the local method loadFragment();
-     * all the fragment related code is in HomeActivity - home - search- cart and user
-     *
-     *
-     * **/
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        //when a bottom navigation button is selected this is called
-        Fragment fragment  = null;
-        switch (menuItem.getItemId()){
-
-            case R.id.action_home:
-                fragment = new HomeFragment();
-                recreate();
-                break;
-           /** case R.id.action_search:
-                fragment = new SearchFragment();
-                break;
-            **/
-            case R.id.action_cart:
-
-                fragment = new CartFragment();
-                //using ListAdapterTwo to implement the cart recyclerView
-                getCartListWithIntent(cartActive);
-
-
-
-                break;
-            case R.id.action_profile:
-                fragment = new ProfileFragment();
-                Log.e("LOAD", "loadprofilefragment");
-                loadProfileFragment();
-                break;
-        }
-
-
-        return loadFragment(fragment);
-    }
-
-
-
-
-    /**home fragment -
-     * when an icon in the list is clicked - openList(View V);
-     * **/
-    int size;
-
-    public void openList(View v){
-        int serviceID = v.getId();
-
-        Intent listIntent = new Intent(HomeActivity.this, ListActivity.class);
-
-        //passes the cart data to the intent to list
-        if(cartList.size()!=0){
-            Log.e("CART", "cart data from HomeActivity to ListActivity");
-            listIntent.putExtra("openCart", true);
-            listIntent.putExtra("pricelist", priceList);
-            listIntent.putExtra("namelist", nameList);
-            listIntent.putExtra("size", cartList.size());
-
-        }else{
-            listIntent.putExtra("openCart", false);
-            Log.e("CART", "NO cart data from HomeActivity to ListActivity");
-
-        }
-
-        listIntent.putExtra("SERVICE_ID", serviceID);
-        startActivity(listIntent);
-
-    }
-
-
-    //code implementation for search fragment. to enable, add menu option in bottom lost
-    /** search fragment
-     * when the search fragment is open and the user searches for a service
-
-
-    DatabaseReference dbRef;
-    FirebaseDatabase mFirebaseDatabase;
-
-    int lengthCount;
-    List<Service> searchList;
-    String[] listString;
-    //implementation to search through the data from firebase
-    public void searchValue(View v){
-
-        listString = new  String[10];
-        EditText searchBar = (EditText) findViewById(R.id.search_edit_text);
-        String queryText = searchBar.getText().toString();
-        SearchValue sv = new SearchValue(queryText);
-        searchList = sv.searchForVal();
-        //temporary solution of a 2 second buffer to retrieve data
-        Handler handler = new Handler();
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                getsearchList();
-            }
-        };
-        handler.postDelayed(r, 5000);
-    }
-
-    /**
-    public void openSearch(View v){
-        //when the searchbar in the home screen is tapped
-        //bottomnavigation view has to be highlighted manually in event of fragment chnge manually
-        loadFragment(new SearchFragment());
-        bottomNavigationView.getMenu().findItem(R.id.action_search).setChecked(true);
-    }
-
-    public void getsearchList(){
-        if(searchList != null) {
-            Log.e("SearchedServices", String.valueOf(searchList.size()));
-            setupSearchRecyclerView(searchList);
-        }
-    }
-
-    //recyclerview for the search results in the searchfragment
-    //listadapter two is the type of adapter containg add and minus buttons, ect;
-    ListAdapterTwo listAdapter;
-    private void setupSearchRecyclerView(List<Service> myDataset) {
-        listAdapter = new ListAdapterTwo(myDataset, new ListAdapterTwo.ClickListener() {
-            @Override
-            public void onPositionClicked(int position) {
-            }
-            @Override
-            public void onLongClicked(int position) {
-            }
-        },this);
-        mRecyclerView = (RecyclerView) findViewById(R.id.search_recyclerview);
-        mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(listAdapter);
-        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                //code goes here, goes to addedToCart();
-            }
-
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        }));
-
-
-    }
-
-   **/
-
-
-
-    public void addedToCart(){
-        //when a button is clicked in recyclerview + or - or add to cart the method is executed within the search fragment. CURRENTLY SEARCH FRAGMENT IS NOT USED
-       // boolean cartcontent = listAdapter;
-        //if(cartcontent){
-            //cartList = listAdapter.returnCart();
-       // }
-    }
-
-    /**
-     *
-     * Cart fragment area
-     * getCartList prepares the cart objects in the background
-     */
-    String shopUID;
-    private void getCartList(boolean cartActive) {
-        Log.e("Cart", "cart data is in homeactivty (cartscreen)");
-
-        int size = intent.getIntExtra("size", 0);
-        if(size!=0){
-            priceList = intent.getIntArrayExtra("pricelist");
-            nameList = intent.getStringArrayExtra("namelist");
-            shopUID = intent.getStringExtra("shopuid");
-            isCartEnabled = true;
-        }
-        for(int i =0;i <size;i++){
-            Service service = new Service(nameList[i], priceList[i]);
-            cartList.add(service);
-        }
-        if(cartList!= null) {
-            Log.e("TEMP", String.valueOf(cartList.size()));
-            if(cartList.size() !=0) {
-                for(Service c :cartList){
-                    Log.e("TAG", c.getServiceName());
-                }
-            }
-        }
-    }
-
-    /**
-     *
-     * getCartListWithIntent prepares cart objects, along with intent to cartActivity for cart viewing
-     */
-
-    private void getCartListWithIntent(boolean cartActive) {
-        Log.e("Cart", "cart data is in homeactivty (cartscreen)");
-
-        int size = intent.getIntExtra("size", 0);
-        if(size!=0){
-            priceList = intent.getIntArrayExtra("pricelist");
-            nameList = intent.getStringArrayExtra("namelist");
-            shopUID = intent.getStringExtra("shopuid");
-            isCartEnabled = true;
-        }
-        for(int i =0;i <size;i++){
-            Service service = new Service(nameList[i], priceList[i]);
-            cartList.add(service);
-        }
-        if(cartList!= null) {
-            Log.e("TEMP", String.valueOf(cartList.size()));
-            if(cartList.size() !=0) {
-                if(cartActive) {
-                    //loadFragment(new CartFragment());
-                }
-                for(Service c :cartList){
-                    Log.e("TAG", c.getServiceName());
-                }
-
-
-                openCart(nameList, priceList, size,shopUID);
-
-            }else{
-                //the user hasnt added anything in the cart yet. 0 items
-                //showing message and an option to return home
-                Log.e("TEMP", "EMPTY CART");
-
-
-            }
-        }
-    }
-
-    private void openCart( String[] nameList, int[] priceList, int size, String shopUID) {
+    private void openCart(String shopID, String UserId) {
         Intent cartIntent = new Intent(HomeActivity.this, CartActivity.class);
-        cartIntent.putExtra("nameList", nameList);
-        cartIntent.putExtra("priceList", priceList);
-        cartIntent.putExtra("size", size);
-        cartIntent.putExtra("shopuid", shopUID);
         startActivity(cartIntent);
     }
 
@@ -502,14 +438,12 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         //no item in cart. user presssed button to go back to home
         loadFragment(new HomeFragment());
         bottomNavigationView.getMenu().findItem(R.id.action_home).setChecked(true);
-        recreate();
 
     }
 
 
     /**
-     *     to load the user credentials for profile fragment
-     *     it does not open a fragment rather a new activity
+     *     //to load the user credentials for profile fragment
      */
 
     private void loadProfileFragment() {
@@ -517,21 +451,21 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     startActivity(intent);
     }
 
-
     /**
-     * helper methods to get essential user data if required now or in future
+     * loaders
      * @return
      */
+
     public String LoadNum(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("NUMBER", "NULL");
     }
 
-    public String LoadName(){
+    public String loadName(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("NAME", "NULL");
     }
-    public String LoadAddress(){
+    public String loadAddress(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("address", "NULL");
     }
@@ -552,13 +486,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public void onBackPressed() {
         //leaving it empty so that the user wont go to login.
-        //TODO Change into a better practice
+        //TO be Changed into a better practice
     }
-
-    private float compareDistance(Location a, Location b){
-        return   a.distanceTo(b);
-    }
-
-
 
 }

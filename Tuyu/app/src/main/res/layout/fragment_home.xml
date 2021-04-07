@@ -1,68 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loaderview"
+        android:gravity="center"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+    <pl.droidsonroids.gif.GifImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/loader_gif">
+
+    </pl.droidsonroids.gif.GifImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetching Watercans..."
+            android:textSize="12sp"/>
+    </LinearLayout>
+
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/home_fragment_main"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="invisible"
             android:orientation="vertical">
 
-            <RelativeLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="100sp"
-                android:background="#ffffff">
-
-                <ImageView android:layout_width="30sp"
-                    android:layout_height="30sp"
-                    android:src="@drawable/flash_icon"
-                    android:layout_margin="30sp"
-                    android:id="@+id/flash_icon"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/flash_icon"
-                    android:text="Address1"
-                    android:maxLength="12"
-                    android:id="@+id/addressline1"
-                    android:layout_marginTop="30sp"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="19sp"
-                    android:id="@+id/addressline2"
-                    android:text="address2"
-                    android:layout_below="@id/addressline1"
-                    android:layout_toRightOf="@id/flash_icon"/>
-
-
-
-            </RelativeLayout>
-
-
-
-
-
-            <ImageView
-                android:layout_marginTop="5sp"
-                android:layout_width="match_parent"
-                android:onClick="openList"
-                android:id="@+id/z02"
-                android:layout_height="200sp"
-                android:src="@drawable/home_header"/>
-
-
+                android:id="@+id/recycler_view_home_header"
+                android:layout_margin="5sp"
+                android:padding="15sp"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -76,343 +64,71 @@
                     android:layout_margin="20sp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200sp"
+                        android:layout_height="250sp"
+                        android:background="@color/white"
                         android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
+                        android:src="@drawable/home_card1"
+                        app:cardElevation="6sp"/>
 
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200sp"
+                        android:layout_height="250sp"
+                        android:background="@color/white"
                         android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
+                        android:src="@drawable/home_card1"
+                        app:cardElevation="6sp"/>
 
-                    <ImageView
-                        android:layout_width="300sp"
-                        android:layout_height="200sp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200sp"
+                        android:layout_height="250sp"
+                        android:background="@color/white"
                         android:layout_margin="10sp"
-                        android:src="@drawable/home_card1"/>
+                        android:src="@drawable/home_card1"
+                        app:cardElevation="6sp"/>
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200sp"
+                        android:layout_height="250sp"
+                        android:background="@color/white"
+                        android:layout_margin="10sp"
+                        android:src="@drawable/home_card1"
+                        app:cardElevation="6sp"/>
                 </LinearLayout>
 
 
 
 
             </HorizontalScrollView>
-
-
             <!-- layout of elements with open services-->
-            <LinearLayout
-                android:visibility="gone"
-                android:layout_width="match_parent"
+
+
+            <ImageView
+                android:layout_width="300sp"
                 android:layout_height="wrap_content"
+                android:src="@drawable/outlets_near_you"
+                android:layout_margin="13sp"
                 android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_margin="10sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:onClick="openList"
-                        android:layout_height="40sp"
-                        android:id="@+id/s01"
-                        android:src="@drawable/electrical_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Electrical"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s02"
-                        android:src="@drawable/plumbing_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Plumbing"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s03"
-                        android:src="@drawable/carpentry_logo"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Carpentry"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-            <!-- layout of elements with open services-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:orientation="horizontal"
-                android:layout_margin="10sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:id="@+id/s04"
-                        android:onClick="openList"
-                        android:src="@drawable/aircon_logo"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Airconditioner"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s05"
-                        android:layout_height="40sp"
-                        android:src="@drawable/computer_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Computer"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s06"
-                        android:src="@drawable/cctv_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CCTV Service"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-            <!-- layout of elements with open services-->
-            <LinearLayout
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_margin="10sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s07"
-                        android:layout_height="40sp"
-                        android:src="@drawable/pest_control_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pest Control"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s08"
-                        android:src="@drawable/deep_clean_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Deep Cleaning"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s09"
-                        android:layout_height="40sp"
-                        android:src="@drawable/packers_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Packers n Movers"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-            <!-- layout of elements with open services-->
-            <LinearLayout
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_margin="20sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_margin="4sp">
-
-                    <ImageView
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:onClick="openList"
-                        android:id="@+id/s10"
-                        android:src="@drawable/appliances_icon"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Appliances"
-                        android:textColor="#000000"/>
-
-
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
+                android:id="@+id/outlets_near_you"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"
-                android:layout_weight="1"
-                android:id="@+id/recycler_view">
+                android:layout_height="500sp"
+                android:layout_margin="10sp"
+                android:layout_gravity="center"
+                android:scrollbars="none"
+                android:scrollIndicators="none"
+                android:id="@+id/home_recycler"/>
 
-            </androidx.recyclerview.widget.RecyclerView>
 
             <ImageView
+                android:layout_marginTop="100sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/home_footer"
                 android:layout_gravity="center"
-                android:layout_marginBottom="75sp"/>
+                android:layout_marginBottom="100sp"/>
 
 
 

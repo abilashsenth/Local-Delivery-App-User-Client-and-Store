@@ -21,6 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.daimajia.androidanimations.library.fading_entrances.FadeInAnimator;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,6 +44,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
     EditText mEditText, nameEdittext,  otpEdittext;
     String number, name;
@@ -48,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     boolean isLoggedIn;
     private SharedPreferences sharedPreferences;
     double latitude, longitude;
+    LinearLayout mLayout;
     TextView addressText;
     LinearLayout loginLinearLayout1, loginLinearLayout2;
 
@@ -55,6 +60,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mLayout = (LinearLayout) findViewById(R.id.login_layout);
+        YoYo.with(Techniques.FadeIn)
+                .duration(700)
+                .playOn(findViewById(R.id.login_layout));
+
         loginLinearLayout1 = (LinearLayout) findViewById(R.id.login_linear_layout_1);
         loginLinearLayout2 = (LinearLayout) findViewById(R.id.login_linear_layout_2);
         mEditText = (EditText) findViewById(R.id.number_text);
@@ -74,16 +84,6 @@ public class LoginActivity extends AppCompatActivity {
 
     boolean flag = false;
     public void loginCall(View view) {
-        //ignoring entire phone otp verification. the first time user presses button, the name, number are taken and next activity is run
-        number = mEditText.getText().toString();
-        name = nameEdittext.getText().toString();
-        SaveNUM("NUMBER", number);
-        SaveName("NAME", name);
-        // ...
-        Intent mHomeIntent = new Intent(LoginActivity.this, MapAddressActivity.class);
-        startActivity(mHomeIntent);
-
-        /**
         if(!flag) {
             flag = true;
             //user entered a number and calls for login
@@ -97,13 +97,19 @@ public class LoginActivity extends AppCompatActivity {
                     mCallbacks);        // OnVerificationStateChangedCallbacks
             loginLinearLayout1.setVisibility(View.GONE);
             loginLinearLayout2.setVisibility(View.VISIBLE);
+
+
+
+
         }else{
             //gets called the second time user presses the button
             //verify the otp in edittext
+
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, otpEdittext.getText().toString());
             signInWithPhoneAuthCredential(credential);
+
+
         }
-         **/
 
     }
 
@@ -187,6 +193,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                             }
+
                         }
                     }
                 });
@@ -218,5 +225,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onBackPressed() {
 
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 
 }

@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#000000"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
-
-
+    
+    
     <ImageView
         android:layout_width="match_parent"
+        android:alpha="0.5 "
         android:layout_height="match_parent"
-        android:layout_margin="20sp"
+        android:scaleType="centerCrop"
         android:layout_centerInParent="true"
         android:src="@drawable/login_bg"/>
 
@@ -19,8 +21,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/login_layout"
         android:orientation="vertical"
         android:gravity="center">
+
+        <ImageView
+            android:layout_marginTop="60sp"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_screen_header"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,22 +43,21 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="7sp"
             >
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/login_bar"
-                android:layout_centerInParent="true"
-                android:id="@+id/login_bar"/>
 
 
            <EditText
-               android:layout_width="200sp"
+               android:layout_width="250sp"
                android:id="@+id/number_text"
+               android:backgroundTint="#ffffff"
+               android:inputType="number"
+               android:textColorHint="#c0c0c0"
+               android:textColor="#ffffff"
                android:layout_height="wrap_content"
                android:layout_centerInParent="true"
-               android:hint="Mobile Number"/>
+               android:hint="10 Digit Mobile Number"/>
 
 
         </RelativeLayout>
@@ -60,17 +68,16 @@
             android:layout_height="wrap_content"
             >
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/login_bar"
-                android:layout_centerInParent="true"
-                android:id="@+id/name_bar"/>
+
 
 
             <EditText
-                android:layout_width="200sp"
+                android:layout_width="250sp"
                 android:id="@+id/name_Text"
+                android:textColor="#ffffff"
+                android:maxLength="25"
+                android:textColorHint="#c0c0c0"
+                android:backgroundTint="#ffffff"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:hint="Username"/>
@@ -97,18 +104,17 @@
                 android:layout_height="wrap_content"
                 >
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/login_bar"
-                    android:layout_centerInParent="true"
-                    android:id="@+id/otp_bar"/>
+
 
 
                 <EditText
-                    android:layout_width="200sp"
+                    android:layout_width="250sp"
                     android:id="@+id/otp_text"
                     android:layout_height="wrap_content"
+                    android:textColorHint="#ffffff"
+                    android:backgroundTint="#ffffff"
+                    android:inputType="number"
+                    android:textColor="#ffffff"
                     android:layout_centerInParent="true"
                     android:hint="Enter OTP"/>
 

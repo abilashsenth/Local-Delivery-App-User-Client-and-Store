@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUMAIN/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\TUYUMAIN\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "/home/barani/.gradle/caches/transforms-2/files-2.1/fb8f7031ef66b8147647717c2aecca12/appcompat-1.1.0/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\kalicharan\\.gradle\\caches\\transforms-2\\files-2.1\\a16993c4b2fd8b991d3240289ad4e24e\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "3407",
+                        "endLines": "50",
+                        "endColumns": "12",
+                        "endOffsets": "3552"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\kalicharan\\.gradle\\caches\\transforms-2\\files-2.1\\a14cdc991101fa09d2d3edad8d9a5a6f\\appcompat-1.1.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,37,41,42,43,44",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

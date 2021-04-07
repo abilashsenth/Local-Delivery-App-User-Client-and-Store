@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
+    android:elevation="5sp"
     android:layout_height="wrap_content"
     android:background="#c0c0c0">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
 
 
     <ImageView
         android:layout_width="120sp"
         android:layout_weight="1"
         android:layout_height="120sp"
-        android:src="@drawable/splash_header"
         android:layout_margin="10sp"
         android:layout_gravity="left"
         android:id="@+id/list_item_type_one_image"/>
@@ -24,5 +30,5 @@
         android:textSize="30sp"
         android:layout_weight="31"
         android:layout_margin="10sp"/>
-
-</LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

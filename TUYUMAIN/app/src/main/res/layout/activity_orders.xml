@@ -6,12 +6,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".OrdersActivity">
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:checked="true"
+        android:text="OFFLINE/ONLINE"
+        android:textColor="#000000"
+        android:id="@+id/offline_online_toggle"
+        android:textOff="OFFLINE"
+        android:textOn="ONLINE"
+        />
+
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:checked="true"
+        android:textColor="#000000"
+        android:text="Partner/Myself"
+        android:id="@+id/delivery_preference_toggle"
+        android:textOff="Deliver With Partner"
+        android:textOn="Deliver Myself"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="locations"
         android:id="@+id/locationsButton"
         android:onClick="openPartnersView"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shop profile"
+        android:id="@+id/shopProfileButton"
+        android:onClick="shopProfile"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Partners"
+        android:id="@+id/manage_partner"
+        android:onClick="managePartnerActivity"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Finances"
+        android:id="@+id/manage_finances"
+        android:onClick="manageFinancesActivity"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

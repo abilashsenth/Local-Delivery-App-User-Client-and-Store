@@ -5,10 +5,13 @@
         android:icon="@drawable/homeicon"
         android:title="Home"
         android:enabled="true"/>
-
     <item android:id="@+id/action_cart"
         android:icon="@drawable/cart_icon"
         android:title="Orders"
+        android:enabled="true"/>
+    <item android:id="@+id/action_track"
+        android:icon="@drawable/track_logo"
+        android:title="Track Order"
         android:enabled="true"/>
     <item android:id="@+id/action_profile"
         android:icon="@drawable/profile_icon"

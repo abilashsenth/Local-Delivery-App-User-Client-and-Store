@@ -6,7 +6,13 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +21,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AssignActivity"></activity>
+        <activity android:name=".StatusResponseActivity"></activity>
+        <activity android:name=".ManageFinancesActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ManagePartnerActivity" />
+        <activity android:name=".AssignActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,7 +40,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".PartnerLocationActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".PartnerActivity" />
         <activity android:name=".OrdersActivity" />
@@ -40,6 +51,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".MyService" />
+
+        <service android:name=".NotificationService" />
+
+
+
     </application>
 
 </manifest>

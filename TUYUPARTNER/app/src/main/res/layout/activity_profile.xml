@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/profile_shop_ID"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="profile"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/profile_ID"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="profile"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/profile_Pass"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="profile"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/profile_Number"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:id="@+id/logOut"
+        android:onClick="logOut"/>
+
+
+</LinearLayout>

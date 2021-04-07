@@ -1,53 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".CartActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+    <ImageView
+        android:layout_width="70sp"
+        android:layout_gravity="center"
+        android:layout_height="50sp"
+        android:src="@drawable/cart_header"></ImageView>
+
+
+
+
+
+
+
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
+        android:layout_margin="4sp"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        android:id="@+id/cartOrderView">
+        android:id="@+id/cartListRecycler">
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/divider_large"
+        android:layout_margin="15sp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="As soon as possible"
-        android:id="@+id/slot1"
-        android:onClick="slotSelection"/>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/cart_activity_reserve_can_count"
+        android:layout_height="80sp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        card_view:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#ffffff"
+        card_view:cardElevation="5dp"
+        android:layout_margin="4sp"
+        card_view:cardUseCompatPadding="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Today Evening"
-        android:id="@+id/slot2"
-        android:onClick="slotSelection"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="slotSelection"
-        android:id="@+id/slot3"
-        android:text="Today Afternoon"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/slot4"
-        android:text="Tomorrow Morning"
-        android:onClick="slotSelection"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center">
 
 
-    <Button
-        android:layout_width="200sp"
-        android:id="@+id/proceed_to_payment"
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:src="@drawable/empty_can"
+                android:layout_margin="3sp"
+                android:layout_weight="1"
+                android:id="@+id/imageView"/>
+
+            <LinearLayout
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reserve Cans"
+                    android:textStyle="bold"
+                    android:id="@+id/list_item_type_two_text"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:layout_margin="20sp"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:id="@+id/list_display_one"
+                android:layout_margin="20sp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="30sp"
+                    android:id="@+id/add_button_list"
+                    android:layout_height="30sp"
+                    android:onClick="reserve_can_count"
+                    android:clickable="true"
+                    android:src="@drawable/add_icon"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:id="@+id/list_display_two"
+                android:layout_margin="20sp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="30sp"
+                    android:id="@+id/plus_button_list"
+                    android:clickable="true"
+                    android:onClick="reserve_can_count"
+                    android:layout_height="30sp"
+                    android:src="@drawable/add_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_margin="3sp"
+                    android:text="1"
+                    android:id="@+id/indicator_number"/>
+                <ImageView
+                    android:layout_marginTop="2sp"
+                    android:layout_width="30sp"
+                    android:id="@+id/minus_button_list"
+                    android:onClick="reserve_can_count"
+                    android:clickable="true"
+                    android:layout_height="30sp"
+                    android:src="@drawable/minus_icon"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/divider_large"
+        android:layout_margin="15sp"/>
+
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:id="@+id/home_recycler_layout_base"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        card_view:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#ffffff"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="10sp"
+                android:layout_gravity="center"
+                android:layout_margin="10sp"
+                android:src="@drawable/select_time_pref"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_margin="10sp"
+                android:id="@+id/slot1"
+                android:onClick="slotSelection"
+                android:src="@drawable/as_soon_as_possible_highlighted_button"></ImageView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_margin="10sp"
+                android:id="@+id/slot2"
+                android:onClick="slotSelection"
+                android:src="@drawable/super_thirty_five_button"></ImageView>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/divider_large"
+                android:layout_margin="15sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:scaleType="centerCrop"
+        android:id="@+id/place_order_button"
+        android:layout_gravity="bottom"
         android:onClick="proceedToPayment"
-        android:layout_height="200sp"
-        android:text="proceed to payment"/>
+        android:src="@drawable/proceed_to_billing" />
 
-
-</LinearLayout>
+</FrameLayout>

@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:src="@drawable/shop_360_logo_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

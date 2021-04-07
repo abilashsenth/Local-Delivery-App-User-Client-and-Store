@@ -13,13 +13,17 @@ import com.stepstone.apprating.listener.RatingDialogListener;
 
 import java.util.Arrays;
 
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class RatingsActivity extends AppCompatActivity implements RatingDialogListener {
 
     private String date;
     private String time;
-    private String UID, uniqueIdentifierDate;
+    private String UID, uniqueIdentifierDate, OID;
     double rating;
-    private int TAG;
+
+    //OID - ORDER ID
+    //UID - USERID
 
     DatabaseReference databaseReference;
     String fBaseURL = "https://tuyuservices.firebaseio.com/";
@@ -37,8 +41,10 @@ public class RatingsActivity extends AppCompatActivity implements RatingDialogLi
 
         date = intent.getStringExtra("date");
         time = intent.getStringExtra("time");
-        uniqueIdentifierDate = date+"-"+time;
+        uniqueIdentifierDate = date+"/"+time;
         UID = intent.getStringExtra("UID");
+        OID = intent.getStringExtra("OID");
+
         showDialog();
     }
 
@@ -74,13 +80,13 @@ public class RatingsActivity extends AppCompatActivity implements RatingDialogLi
     public void onPositiveButtonClicked(int rate, String comment) {
         // interpret results, send it to analytics etc...
         Log.e("RATING", "Rating "+rate+ " "+ "comment"+comment);
-        databaseReference.child("RATING").child(uniqueIdentifierDate).child(UID).child(String.valueOf(rate)).setValue(comment);
+        databaseReference.child("RATING").child(OID).child(UID).child(uniqueIdentifierDate).child(String.valueOf(rate)).setValue(comment);
         goToMain();
     }
 
     @Override
     public void onNegativeButtonClicked() {
-        databaseReference.child("RATING").child(uniqueIdentifierDate).child(UID).child("NULL").setValue("NULL");
+        databaseReference.child("RATING").child(OID).child(UID).child(uniqueIdentifierDate).child("NULL").setValue("NULL");
         Log.e("RATING", "rating cancelled");
         goToMain();
 
@@ -98,3 +104,5 @@ public class RatingsActivity extends AppCompatActivity implements RatingDialogLi
         startActivity(intent);
     }
 }
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+

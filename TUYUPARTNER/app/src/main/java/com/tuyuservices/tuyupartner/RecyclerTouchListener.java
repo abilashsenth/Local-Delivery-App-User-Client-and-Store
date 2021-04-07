@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
     private GestureDetector gestureDetector;
     private ClickListener clickListener;
@@ -47,6 +49,8 @@ public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
     public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 
     public interface ClickListener {
         void onClick(View view, int position);

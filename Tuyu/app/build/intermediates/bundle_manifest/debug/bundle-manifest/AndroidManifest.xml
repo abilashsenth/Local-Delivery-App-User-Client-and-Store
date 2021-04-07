@@ -15,17 +15,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
@@ -40,12 +38,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-
-        <!-- add this service -->
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
-        <!-- other code -->
-        <activity android:name="com.tuyuservices.tuyu.CognitoActivity" />
         <activity android:name="com.tuyuservices.tuyu.ProfileActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -61,17 +53,29 @@
 
         <activity
             android:name="com.tuyuservices.tuyu.MapAddressActivity"
-            android:label="@string/title_activity_map_address" />
-        <activity android:name="com.tuyuservices.tuyu.RatingsActivity" />
+            android:label="@string/title_activity_map_address"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.tuyuservices.tuyu.MapsFinalActivity"
-            android:label="@string/title_activity_maps_final" />
-        <activity android:name="com.tuyuservices.tuyu.PaymentActivity" />
-        <activity android:name="com.tuyuservices.tuyu.CartActivity" />
-        <activity android:name="com.tuyuservices.tuyu.ListActivitySecondary" />
-        <activity android:name="com.tuyuservices.tuyu.TrialDatabaseActivity" />
+            android:name="com.tuyuservices.tuyu.RatingsActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.tuyuservices.tuyu.ListActivity"
+            android:name="com.tuyuservices.tuyu.OrderTrackActivity"
+            android:label="@string/title_activity_maps_final"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuyuservices.tuyu.PaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuyuservices.tuyu.CartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuyuservices.tuyu.ComingSoonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuyuservices.tuyu.ListActivitySecondary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuyuservices.tuyu.TrialDatabaseActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.tuyuservices.tuyu.HomeActivity"
@@ -89,6 +93,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<!--     services below -->
+        <service android:name="com.tuyuservices.tuyu.UserNotificationService" />
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
@@ -116,41 +124,13 @@
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
         </service> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.ForceChangePasswordActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_force_change_password"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.ForgotPasswordActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_forgot_password"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.SignUpActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.MFAActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_mfa"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.userpools.SignUpConfirmActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_up_confirm"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.amazonaws.mobile.auth.ui.SignInActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_sign_in"
-            android:screenOrientation="portrait" />
 
         <receiver
             android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
@@ -176,15 +156,6 @@
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
             android:enabled="true"
             android:exported="false" >
-        </receiver>
-        <receiver
-            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:permission="android.permission.INSTALL_PACKAGES" >
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER" />
-            </intent-filter>
         </receiver>
 
         <service

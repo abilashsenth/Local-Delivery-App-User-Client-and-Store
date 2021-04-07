@@ -3,6 +3,8 @@ package com.tuyuservices.tuyu;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class Service implements Parcelable {
 
      int price;
@@ -81,4 +83,7 @@ public class Service implements Parcelable {
         dest.writeString(serviceName);
         dest.writeInt(price);
     }
+
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 }

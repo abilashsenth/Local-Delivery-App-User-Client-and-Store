@@ -1,45 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ProfileActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="60sp"
-            android:id="@+id/profile_name"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="profile"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="60sp"
-            android:id="@+id/profile_number"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="profile"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="20sp"
-            android:id="@+id/profile_address"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="profile"/>
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile_header"
+        android:layout_gravity="center"/>
 
-        <Button
-            android:layout_width="wrap_content"
+
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/home_recycler_layout_base"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        card_view:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#ffffff"
+        card_view:cardElevation="5dp"
+        android:layout_margin="15sp"
+        card_view:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:orientation="vertical"
+            android:background="@drawable/profile_login_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="40sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/profile_name"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="10sp"
+                android:text="Username"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:id="@+id/profile_number"
+                android:layout_margin="10sp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="+91 1234567890"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:layout_margin="10sp"
+                android:textAlignment="center"
+                android:id="@+id/profile_address"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Address"/>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <ImageView
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile_previous_header"
+        android:layout_gravity="center"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="logout"
+            android:id="@+id/recycler_views_orders">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="200sp"
+            android:layout_height="80sp"
+            android:src="@drawable/logout_button"
             android:id="@+id/logOut"
             android:onClick="logOut"/>
 
-
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

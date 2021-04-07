@@ -23,11 +23,13 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
     final String TAG = "Fbase" ;
     String fBaseURL = "https://tuyuservices.firebaseio.com/";
+    String shopID;
     FirebaseDatabase mFirebaseDatabase;
-    DatabaseReference mRef;
+    DatabaseReference databaseReference;
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
     EditText usernameEdittext, passwordEdittext;
-    List<Partner> mList;
+    List<Partner> partnerList;
     private SharedPreferences sharedPreferences;
 
 
@@ -35,12 +37,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference();
-
-
-        getUserNamePasswords();
+        databaseReference = mFirebaseDatabase.getReference();
+        getPartnerInstances();
 
 
         boolean isLoggedIn = LoadBool();
@@ -53,20 +52,35 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void getUserNamePasswords() {
+    private void getPartnerInstances() {
 
-        mList= new ArrayList<>();
+
+        partnerList = new ArrayList<>();
         // Read from the database
-        mRef.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
+                String partners = String.valueOf(dataSnapshot.child("PARTNER").getChildrenCount());
+                Log.e("PARTNERS", partners);
+
+
+
                 for(DataSnapshot ds : dataSnapshot.child("PARTNER").getChildren()){
-                   String userID = ds.getKey();
-                   String password = String.valueOf(ds.getValue());
-                   Partner p = new Partner(userID, password);
-                   mList.add(p);
+                   String shopID = ds.getKey();
+                   for(DataSnapshot ds1: ds.getChildren()){
+                       String partnerID = ds1.getKey();
+
+                       String partnerNumber = String.valueOf(ds1.child("NUMBER").getValue());
+                       String partnerLat = String.valueOf(ds1.child("LATITUDE").getValue());
+                       String partnerLong = String.valueOf(ds1.child("LONGITUDE").getValue());
+                       String partnerPass = String.valueOf(ds1.child("PASS").getValue());
+                       Partner p = new Partner(partnerID, partnerPass, partnerLat, partnerLong, partnerNumber, shopID);
+                       partnerList.add(p);
+                       Log.e("PARTNERTAG", partnerID);
+
+                   }
                 }
 
             }
@@ -91,16 +105,18 @@ public class LoginActivity extends AppCompatActivity {
         Log.e("TEMPUID", tempUID);
         Log.e("TEMPPASS", tempPASS);
 
-        for(Partner p : mList){
-            if(tempUID.equals(p.getUserID()) && tempPASS.equals(p.getPassword())){
-                Toast.makeText(getApplicationContext(), "Welcome " + p.getUserID().toString(), Toast.LENGTH_SHORT).show();
+        for(Partner p : partnerList){
+
+            if(tempUID.equals(p.getName()) && tempPASS.equals(p.getPass())){
+                Toast.makeText(getApplicationContext(), "Welcome " + p.getName().toString(), Toast.LENGTH_SHORT).show();
                 SaveBool("login", true);
-                SaveID("UID", p.getUserID().toString());
+                SaveSharedPreferences("partnerID", p.getName());
+                SaveSharedPreferences("shopID", p.getShopID());
+                SaveSharedPreferences("partnerNumber", p.getNumber());
+                SaveSharedPreferences("partnerPass", p.getPass());
+
                 Intent intent = new Intent(LoginActivity.this, TaskActivity.class);
                 startActivity(intent);
-
-            }else{
-                //Toast.makeText(getApplicationContext(), "Wrong UserID or Password", Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -112,12 +128,13 @@ public class LoginActivity extends AppCompatActivity {
         editor.putBoolean(key, value);
         editor.apply();
     }
-    public void SaveID(String key, String value){
+    public void SaveSharedPreferences(String key, String value){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value);
         editor.apply();
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
     public boolean LoadBool(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

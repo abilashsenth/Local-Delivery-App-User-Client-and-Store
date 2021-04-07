@@ -15,42 +15,21 @@
       },
       "oauth_client": [
         {
-          "client_id": "156141080251-l1m4itcmcepa2dff81aktdtqbosji85h.apps.googleusercontent.com",
+          "client_id": "156141080251-ofmhbl77segbjgsmltecskg9ts69kc3s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.tuyuservices.tuyu",
-            "certificate_hash": "245912dfe489d4d5bcdeaecc213844ad731c566b"
+            "certificate_hash": "826f2ccc0821a2c04aee247a84ade178c3c20b5d"
           }
         },
         {
-          "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAR2n5WdNOPWHFuxAdzOlpSuS0os9m6hYU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:156141080251:android:0b6a8afd3bf5916802239e",
-        "android_client_info": {
-          "package_name": "com.tuyuservices.tuyumain"
-        }
-      },
-      "oauth_client": [
+          "client_id": "156141080251-fvcb1inp85j6rkgg57ja4k87fogvllg1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tuyuservices.tuyu",
+            "certificate_hash": "a42ec3edc1ac76191c5ce7a62270163f59f0d192"
+          }
+        },
         {
           "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
           "client_type": 3
@@ -80,6 +59,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "156141080251-f3pejp042b1oql688qu6qiknvpp1161f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tuyuservices.tuyupartner",
+            "certificate_hash": "826f2ccc0821a2c04aee247a84ade178c3c20b5d"
+          }
+        },
         {
           "client_id": "156141080251-0qnk4acf2lipsl5ckdr1kahqb672j6vv.apps.googleusercontent.com",
           "client_type": 3

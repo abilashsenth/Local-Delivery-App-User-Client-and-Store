@@ -1,12 +1,15 @@
 package com.tuyuservices.tuyupartner;
 
 import androidx.appcompat.app.AppCompatActivity;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -25,4 +28,6 @@ public class SplashActivity extends AppCompatActivity {
 
         mTimer.schedule(timerTask, 1000);
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 }

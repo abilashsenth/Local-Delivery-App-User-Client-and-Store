@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.stepstone.apprating:app-rating:2.3.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9c9e4259f5d2e184b36fc769c309fb9a/jetified-app-rating-2.3.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9c9e4259f5d2e184b36fc769c309fb9a/jetified-app-rating-2.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15f6e107222648f15b63611e5f983f1e/jetified-app-rating-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15f6e107222648f15b63611e5f983f1e/jetified-app-rating-2.3.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.stepstone.apprating/app-rating/2.3.1/4d4c9436e2613cacfb271b68a0141fbca50fec5e/app-rating-2.3.1-javadoc.jar!/" />

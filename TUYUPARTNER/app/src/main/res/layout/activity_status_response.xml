@@ -10,44 +10,138 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/name"/>
+        android:text="SAMPLE"
+        android:id="@+id/oid"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/address"/>
+        android:text="SAMPLE"
+        android:id="@+id/shopID"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/number"/>
+        android:text="SAMPLE"
+        android:id="@+id/status"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/date"/>
+        android:text="SAMPLE"
+        android:id="@+id/name"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/time"/>
+        android:text="SAMPLE"
+        android:id="@+id/number"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/address"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/date"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/time"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/timepref"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/totalamt"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/paymentMethod"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/productsOrdered"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/slotTiming"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/total_amount"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/service_list"/>
     <Button
         android:layout_width="120sp"
-        android:layout_height="120sp"
-        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="call user"
         android:id="@+id/callUser"
         android:onClick="callUser"/>
+    <Button
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="Locate user"
+        android:id="@+id/locateUser"
+        android:onClick="mapIntent"/>
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider"
@@ -58,11 +152,11 @@
         android:layout_height="wrap_content"
         app:text="Accept Order" />
     <com.ncorti.slidetoact.SlideToActView
-        android:id="@+id/finishSlider"
+        android:id="@+id/finish_slider"
         android:layout_width="match_parent"
         app:outer_color="#ff0000"
         android:visibility="gone"
-        app:inner_color="#ff0000"
+        app:inner_color="#ffffff"
         android:layout_height="wrap_content"
         app:text="Finish Order" />
 </LinearLayout>

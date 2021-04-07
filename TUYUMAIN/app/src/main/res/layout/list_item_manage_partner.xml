@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/manage_partner_layout"
+    android:background="#c0c0c0">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_manage_partner_name"
+        android:textColor="#000000"
+        android:gravity="start"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_manage_partner_pass"
+        android:textColor="#000000"
+        android:gravity="start"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/list_item_manage_partner_number"
+        android:textColor="#000000"
+        android:gravity="start"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="delete"
+        android:id="@+id/list_item_manage_partner_delete"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Call partner"
+        android:id="@+id/list_item_manage_partner_call_partner"/>
+
+</LinearLayout>

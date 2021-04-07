@@ -1,15 +1,16 @@
 package com.tuyuservices.tuyu;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 public class Partner {
-    String UID;
+    String partnerID;
     double lat, longitude;
     Partner(String a){
-        UID = a;
+        partnerID = a;
     }
     Partner(){
     }
     Partner(String a, double b, double c){
-        UID = a;
+        partnerID = a;
         lat = b;
         longitude = c;
     }
@@ -22,8 +23,8 @@ public class Partner {
         return longitude;
     }
 
-    public String getUID() {
-        return UID;
+    public String getPartnerID() {
+        return partnerID;
     }
 
     public void setLat(double lat) {
@@ -34,7 +35,9 @@ public class Partner {
         this.longitude = longitude;
     }
 
-    public void setUID(String UID) {
-        this.UID = UID;
+    public void setPartnerID(String partnerID) {
+        this.partnerID = partnerID;
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 }

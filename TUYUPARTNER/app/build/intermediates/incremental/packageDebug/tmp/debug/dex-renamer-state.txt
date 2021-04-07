@@ -1,7 +1,7 @@
-#Sun Feb 23 13:20:23 IST 2020
-base.0=/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+#Sun Jun 07 22:45:17 IST 2020
+base.0=C\:\\Users\\kalicharan\\Desktop\\may - Workspace\\TUYUPARTNER\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
+base.1=C\:\\Users\\kalicharan\\Desktop\\may - Workspace\\TUYUPARTNER\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

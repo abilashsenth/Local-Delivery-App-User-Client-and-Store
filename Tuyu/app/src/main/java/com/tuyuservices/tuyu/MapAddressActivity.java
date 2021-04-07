@@ -23,6 +23,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -41,6 +43,8 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
     private double latitude, longitude;
     String address;
     TextView addressText;
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,8 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
         mapFragment.getMapAsync(this);
         number = LoadNum();
         addressText = (TextView) findViewById(R.id.AddressText);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
 
         checkLocationPermission();
 
@@ -96,12 +102,14 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
 
                 // Add a marker in Sydney and move the camera
                 LatLng position = new LatLng(latitude, longitude);
-                mMap.addMarker(new MarkerOptions().position(position).title("Your position").draggable(true));
+                BitmapDescriptor my_location_marker = BitmapDescriptorFactory.fromResource(R.drawable.my_location_marker);
+                MarkerOptions marker = new MarkerOptions().position(position).draggable(true).icon(my_location_marker);
+                mMap.addMarker(marker);
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+                mMap.animateCamera( CameraUpdateFactory.zoomTo( 17.5f ) );
                 mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
                     @Override
                     public void onMarkerDragStart(Marker marker) {
-
                     }
 
                     @SuppressWarnings("unchecked")
@@ -194,6 +202,8 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        checkCoarseAddress();
+
 
 
     }
@@ -202,25 +212,25 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getString("NUMBER", "NULL");
     }
-    public void SaveLatitude(String key, double value){
+    public void saveLatitude(String key, double value){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("latitude", String.valueOf(value));
         editor.apply();
     }
-    public void SaveLongitude(String key, double value){
+    public void saveLongitude(String key, double value){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("longitude", String.valueOf(value));
         editor.apply();
     }
-    public void SaveAddress(String key, String value){
+    public void saveAddress(String key, String value){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("address", address);
         editor.apply();
     }
-    public void SaveLoggedIn(String key, boolean value){
+    public void saveLoggedIn(String key, boolean value){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(key, value);
@@ -228,13 +238,16 @@ public class MapAddressActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     public void ConfirmAddress(View view) {
-        SaveLoggedIn("login", true);
-        SaveLatitude("latitude", latitude);
-        SaveLongitude("longitude", longitude);
-        SaveAddress("address", address);
+        saveLoggedIn("login", true);
+        saveLatitude("latitude", latitude);
+        saveLongitude("longitude", longitude);
+        saveAddress("address", address);
 
         Intent intent = new Intent(MapAddressActivity.this, HomeActivity.class);
         startActivity(intent);
 
     }
+
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 }

@@ -7,11 +7,79 @@
     android:orientation="vertical"
     tools:context=".ListActivitySecondary">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShopName"
+            android:id="@+id/activity_secondary_shop_name"
+            android:textStyle="bold"
+            android:layout_marginTop="50sp"
+            android:layout_marginLeft="20sp"
+            android:textSize="30sp"
+            android:textColor="#000066"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:id="@+id/activity_secondary_shop_address"
+                android:textColor="#c0c0c0"
+            android:layout_marginLeft="20sp"
+            android:textSize="12sp"
+            android:text="Lorem Ipsum Set dolor amet"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0000cc"
+            android:layout_marginLeft="20sp"
+            android:textSize="12sp"
+            android:text="Now available in your area"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shop_bar_layout">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:id="@+id/shop_bar_image"
+            android:src="@drawable/shop_bar"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.12KM"
+            android:textColor="@color/white"
+            android:id="@+id/shop_bar_distance"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="9sp"
+            android:layout_marginTop="60sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.12KM"
+            android:id="@+id/shop_bar_rating"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_alignParentEnd="true"
+            android:textSize="9sp"
+            android:layout_marginTop="60sp"
+            android:layout_marginRight="80sp"/>
+    </RelativeLayout>
+
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:layout_weight="1"
         android:focusable="true"
@@ -24,50 +92,44 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
         android:visibility="gone"
         android:id="@+id/cartViewListSecondary"
         android:layout_gravity="bottom"
-        android:background="#c0c0c0">
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:scaleType="centerCrop"
+            android:onClick="openCart"
+            android:src="@drawable/cart_card"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:id="@+id/list_secondary_mini_cart_header"
-            android:text="Cart"
-            android:layout_margin="10sp"
-           android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_below="@id/list_secondary_mini_cart_header"
-            android:text="Item Count"
+            android:textSize="14dp"
+            android:text="3 I T E M S"
             android:id="@+id/list_secondary_mini_cart_Count"
-            android:layout_margin="10sp"
-            android:textColor="@color/black" />
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="100sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:layout_toRightOf="@id/list_secondary_mini_cart_header"
-            android:text="price"
+            android:textSize="12dp"
+            android:text="120Rs"
+            android:layout_below="@id/list_secondary_mini_cart_Count"
             android:id="@+id/list_secondary_mini_cart_price"
-            android:layout_margin="10sp"
-            android:textColor="@color/black" />
+            android:layout_marginLeft="100sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="cart"
-            android:id="@+id/openCartButton"
-            android:onClick="openCart"/>
+
 
     </RelativeLayout>
 

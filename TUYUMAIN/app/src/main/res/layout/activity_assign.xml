@@ -7,6 +7,47 @@
     android:orientation="vertical"
     tools:context=".AssignActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call Customer"
+        android:id="@+id/call_customer"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:onClick="callCustomer"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/oid"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/shopIDx"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/status"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,42 +56,7 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
-        android:layout_margin="10sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAMPLE"
-        android:id="@+id/date"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:layout_margin="10sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAMPLE"
-        android:id="@+id/time"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:layout_margin="10sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAMPLE"
-        android:id="@+id/timepreference"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:layout_margin="10sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAMPLE"
-        android:id="@+id/address"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="12sp"
+        android:layout_weight="31"
         android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -60,31 +66,78 @@
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
+        android:layout_weight="31"
         android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/serviceprice"
+        android:id="@+id/address"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
+        android:layout_weight="31"
         android:layout_margin="10sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAMPLE"
-        android:id="@+id/services"
+        android:id="@+id/date"
         android:textColor="#000000"
         android:gravity="center"
         android:textSize="12sp"
+        android:layout_weight="31"
         android:layout_margin="10sp"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UID"
-        android:id="@+id/UID" />
+        android:text="SAMPLE"
+        android:id="@+id/time"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/timepref"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/totalamt"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/paymentMethod"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE"
+        android:id="@+id/productsOrdered"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_weight="31"
+        android:layout_margin="10sp"/>
 
     <com.ncorti.slidetoact.SlideToActView
         android:id="@+id/slider"

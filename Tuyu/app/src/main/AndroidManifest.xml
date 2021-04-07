@@ -9,11 +9,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -22,13 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--add this service-->
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
-        <!--other code-->
-        <activity android:name=".CognitoActivity"></activity>
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -43,18 +36,24 @@
 
         <activity
             android:name=".MapAddressActivity"
-            android:label="@string/title_activity_map_address" />
-        <activity android:name=".RatingsActivity" />
+            android:label="@string/title_activity_map_address"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RatingsActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".MapsFinalActivity"
-            android:label="@string/title_activity_maps_final" />
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".CartActivity" />
-        <activity android:name=".ListActivitySecondary" />
-        <activity android:name=".TrialDatabaseActivity" />
-        <activity
-            android:name=".ListActivity"
-            android:screenOrientation="portrait" />
+            android:name=".OrderTrackActivity"
+            android:label="@string/title_activity_maps_final"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PaymentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CartActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ComingSoonActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListActivitySecondary"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TrialDatabaseActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
@@ -71,6 +70,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+    <!--
+    services below
+    -->
+        <service android:name=".UserNotificationService" />
+
+
     </application>
 
 </manifest>

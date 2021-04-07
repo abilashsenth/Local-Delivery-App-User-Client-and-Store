@@ -51,7 +51,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="71" />
+                                                <entry key="scalingPercent" value="51" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -62,8 +62,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="ffe900" />
-                                      <entry key="foregroundImage" value="$PROJECT_DIR$/../main_logo.png" />
+                                      <entry key="backgroundColor" value="ffffff" />
+                                      <entry key="foregroundImage" value="C:\Users\kalicharan\Desktop\may - Workspace\Tuyu\app\src\main\res\drawable\water360_logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -85,6 +85,24 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                                <entry key="paddingPercent" value="5" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\Users\kalicharan\Desktop\water360_logo_main.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

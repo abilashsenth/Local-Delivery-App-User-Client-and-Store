@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,16 +18,23 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ncorti.slidetoact.SlideToActView;
 
+import java.util.ArrayList;
+
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class AssignActivity extends AppCompatActivity {
 
-    TextView name, uid, number, date, time, timepreference, address, services, servicePrice;
+    public TextView OID, shopIDTextView, status, name, number, address, date, time, timepreference, total, paymentMethod, productsOrdered;
+    public Button callUser;
     private Orders mOrder;
     DatabaseReference databaseReference;
     String fBaseURL = "https://tuyuservices.firebaseio.com/";
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
-    String UID;
-    String num;
+
+    String partnerID, shopIDVariable;
+    private SharedPreferences sharedPreferences;
+    private boolean deliverByMyself;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,31 +45,42 @@ public class AssignActivity extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        shopIDVariable = sharedPreferences.getString("shopID", "NULL");
 
+
+        OID = (TextView) findViewById(R.id.oid);
+        shopIDTextView = (TextView) findViewById(R.id.shopIDx);
+        status = (TextView) findViewById(R.id.status);
         name = (TextView) findViewById(R.id.name);
-        uid = (TextView) findViewById(R.id.UID);
-        number = (TextView) findViewById(R.id.number);
+        number =(TextView) findViewById(R.id.number);
+        address = (TextView) findViewById(R.id.address);
         date = (TextView) findViewById(R.id.date);
         time = (TextView) findViewById(R.id.time);
-        timepreference = (TextView) findViewById(R.id.timepreference);
-        services = (TextView) findViewById(R.id.services);
-        address = (TextView) findViewById(R.id.address);
-        servicePrice = (TextView) findViewById(R.id.serviceprice);
+        timepreference = (TextView) findViewById(R.id.timepref);
+        total = (TextView) findViewById(R.id.totalamt);
+        paymentMethod = (TextView) findViewById(R.id.paymentMethod);
+        productsOrdered = (TextView) findViewById(R.id.productsOrdered);
+        callUser = (Button) findViewById(R.id.call_customer);
 
-        mOrder = new Orders();
-        UID = getIntent().getStringExtra("UID");
+        partnerID = getIntent().getStringExtra("partnerID");
+        deliverByMyself = getIntent().getBooleanExtra("deliverByMyself", false);
+
         mOrder = (Orders) getIntent().getSerializableExtra("mOrder");
         Log.e("HELLO", mOrder.getNumber());
-        num = mOrder.getNumber();
+
+        OID.setText(mOrder.getOID());
+        shopIDTextView.setText(mOrder.getShopID());
+        status.setText(mOrder.getStatus());
         name.setText(mOrder.getName());
         number.setText(mOrder.getNumber());
         address.setText(mOrder.getAddress());
         date.setText(mOrder.getDate());
         time.setText(mOrder.getTime());
         timepreference.setText(mOrder.getTimepreference());
-        services.setText(mOrder.getServicesordered());
-        servicePrice.setText(mOrder.getTotalAmount());
-        uid.setText(UID);
+        total.setText(mOrder.getTotalAmount());
+        paymentMethod.setText(mOrder.getPaymentMethod());
+        productsOrdered.setText(mOrder.getTotalProducts());
 
 
         setupEventCallbacks();
@@ -92,10 +115,16 @@ public class AssignActivity extends AppCompatActivity {
             @Override
             public void onSlideCompleteAnimationEnded(@NonNull SlideToActView view) {
                 Log.e("Tag", "\n" + " onSlideCompleteAnimationEnded");
-                Toast.makeText(getApplicationContext(), "ORDER FROM "+number+ "ASSIGNED TO "+UID,
+                Toast.makeText(getApplicationContext(), "ORDER ID "+OID+ "ASSIGNED TO "+ partnerID,
                         Toast.LENGTH_LONG).show();
                 assignOrder();
-                openHomeIntent();
+                if(deliverByMyself){
+                    Intent responseIntent  =new Intent(AssignActivity.this, StatusResponseActivity.class);
+                    responseIntent.putExtra("Orders", mOrder);
+                    startActivity(responseIntent);
+                }else{
+                    openHomeIntent();
+                }
 
             }
 
@@ -117,9 +146,19 @@ public class AssignActivity extends AppCompatActivity {
     }
 
     private void assignOrder() {
-        mRef.child("ASSIGNED").child(num).setValue(UID);
-        mRef.child("STATUS").child(num).setValue("ASSIGNED");
+        //assign orderID to partnerID. change orderID status to assigned
+
+
+        mRef.child("ASSIGNED").child(mOrder.getOID()).child(shopIDVariable).child(partnerID).setValue("ASSIGNED");
+        mRef.child("ORDERSPLACED").child(mOrder.getOID()).child("STATUS").setValue("ASSIGNED");
 
     }
+
+    public void callCustomer(View view) {
+        String phoneNumber = String.valueOf(number.getText());
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null));
+        startActivity(intent);
+    }
+
 
 }

@@ -8,9 +8,10 @@
     tools:context=".SplashActivity">
 
    <ImageView
-       android:layout_width="wrap_content"
+       android:layout_width="150sp"
+       android:id="@+id/splash_logo"
        android:layout_height="wrap_content"
-       android:src="@drawable/splash_header"
+       android:src="@drawable/splashx"
        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

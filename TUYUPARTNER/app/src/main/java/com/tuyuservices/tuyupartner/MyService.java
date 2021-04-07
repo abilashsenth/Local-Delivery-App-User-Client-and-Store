@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -27,11 +28,12 @@ public class MyService extends Service {
     String fBaseURL = "https://tuyuservices.firebaseio.com/";
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
-    private String TAG = "tag";
+    private String TAG = "PartnerServiceTag";
     private String partnerID;
     private FusedLocationProviderClient fusedLocationClient;
     private FusedLocationProviderClient client;
     private LocationRequest locationRequest;
+    private String shopID;
 
 
     @Override
@@ -57,8 +59,9 @@ public class MyService extends Service {
 
 
 
-        partnerID = intent.getStringExtra("UID");
-        Log.e("UID", partnerID);
+        partnerID = intent.getStringExtra("partnerID");
+        shopID = intent.getStringExtra("shopID");
+        Log.e("partnerID", partnerID);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
 
@@ -92,8 +95,8 @@ public class MyService extends Service {
         Log.e("TAG", "DATABASE OVERWRITE" + longitude);
 
 
-        mRef.child("LOCATION").child(partnerID).child("LATITUDE").setValue(latitude);
-        mRef.child("LOCATION").child(partnerID).child("LONGITUDE").setValue(longitude);
+        mRef.child("PARTNER").child(shopID).child(partnerID).child("LATITUDE").setValue(latitude);
+        mRef.child("PARTNER").child(shopID).child(partnerID).child("LONGITUDE").setValue(longitude);
     }
 
     private final LocationCallback locationCallback = new LocationCallback() {
@@ -108,6 +111,8 @@ public class MyService extends Service {
             }
         }
     };
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 
 
 }

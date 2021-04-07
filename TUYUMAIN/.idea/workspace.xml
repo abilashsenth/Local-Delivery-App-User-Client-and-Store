@@ -11,13 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b4af3d-32e2-45c6-8a03-d7c09e3afefe" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="031d605b" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -47,24 +46,30 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>30</find>
-      <find>list_item_type_one_</find>
-      <find>new ValueE</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>12</replace>
-    </replaceStrings>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\kalicharan\Desktop\tony.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
-  <component name="ProjectId" id="1YVB8uhkUH4r53f8874sfoGMdsR" />
+  <component name="ProjectId" id="1cUnRKhKW7oh2l0LrwCSgxhkzdr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\kalicharan\Desktop\may - Workspace\TUYUMAIN\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV2" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tuyu" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -76,18 +81,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -161,5 +154,60 @@
       <updated>1573044407050</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="654" y="147" key="FileChooserDialogImpl" timestamp="1592206088107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="654" y="147" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592206088107" />
+    <state width="1491" height="191" key="GridCell.Tab.0.bottom" timestamp="1592207640463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592207640463" />
+    <state width="1491" height="191" key="GridCell.Tab.0.center" timestamp="1592207640463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="191" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592207640463" />
+    <state width="1491" height="191" key="GridCell.Tab.0.left" timestamp="1592207640462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="191" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592207640462" />
+    <state width="1491" height="191" key="GridCell.Tab.0.right" timestamp="1592207640463">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="191" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592207640463" />
+    <state x="570" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1592156796165">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="570" y="216" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592156796165" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tuyuservices/tuyumain/PartnerLocationActivity.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tuyuservices/tuyumain/ManageFinancesActivity.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tuyuservices/tuyumain/AssignActivity.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tuyuservices/tuyumain/ListAdapterOrders.java</url>
+          <line>53</line>
+          <properties class="com.tuyuservices.tuyumain.ListAdapterOrders.MyViewHolder" method="onClick">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

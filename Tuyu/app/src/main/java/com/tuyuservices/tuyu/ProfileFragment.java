@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 
 import javax.annotation.Nullable;
 
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class ProfileFragment extends Fragment {
 
     @Nullable
@@ -18,6 +20,9 @@ public class ProfileFragment extends Fragment {
 
         return inflater.inflate(R.layout.fragment_profile, null);
     }
+
+
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 
 }

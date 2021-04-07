@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.location.Location;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -20,26 +23,28 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 public class ListActivitySecondary extends AppCompatActivity {
 
     private static final String TAG = "SecondarylistTag";
-    String shopUID, secondaryTag;
+    String shopID;
     private String[] listString;
-
     DatabaseReference databaseReference;
     FirebaseDatabase mFirebaseDatabase;
-    ValueEventListener valueEventListener;
     DatabaseReference mRef;
-
     RecyclerView mRecyclerView;
     int lengthCount = 0;
     boolean isCartEnabled;
-    public List<Service> serviceList;
+    public List<Product> mProductList;
     Context mainContext;
-    List<Service> cartList = new ArrayList<>();
+    List<Product> cartList;
+    String userID;
     RelativeLayout cartView;
-
+    private SharedPreferences sharedPreferences;
+    TextView shopNamex, shopAddress, shopDistance, shopRating;
 
 
     @Override
@@ -47,48 +52,69 @@ public class ListActivitySecondary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_secondary);
         mainContext = getApplicationContext();
-
+        cartList = new ArrayList<>();
         isCartEnabled = getIntent().getBooleanExtra("openCart", false);
-        shopUID = getIntent().getStringExtra("maintag"); // SHOP UID is the maintag
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        userID =   sharedPreferences.getString("NUMBER", "NULL");
+        shopID = getIntent().getStringExtra("SHOPID");
+
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference();
 
-        //retrieves services under the shop UID, and also retrieves services in cart if any
         retreiveData();
-        if(isCartEnabled){
-            loadCart();
-        }
+        refreshCartPreview();
+
+
     }
+    private void updateShopHeader() {
+
+        final String[] address = new String[1];
+        final String[] shopName = new String[1];
+        final String[] rating = new String[1];
+        final String[] distance = new String[1];
 
 
-    /**
-     * the activity recieves the UID via getIntent.getStringExtra();
-     * sets a valueEventListener for firebase realtime db,
-     * saves an arraylist of all the services  (ie, water can capacity) and their prices
-     */
-    private void retreiveData() {
 
-        serviceList = new ArrayList<>();
-        valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+        // Read from the database
+        ValueEventListener valueEventListenerX = mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                Log.e("SHOPID", shopID);
 
-                for (DataSnapshot ds : dataSnapshot.child("SERVICES").child(shopUID).getChildren()) {
-                    String value = (String) ds.getKey();
-                    Long price = (Long) ds.getValue();
-                    int pricey = price.intValue();
 
-                    Service mService = new Service(value, pricey);
-                    serviceList.add(mService);
-                    lengthCount++;
+                shopName[0] = String.valueOf(dataSnapshot.child("SHOP").child(shopID).child("NAME").getValue());
+                String latitude = String.valueOf(dataSnapshot.child("SHOP").child(shopID).child("LAT").getValue());
+                String longitude = String.valueOf(dataSnapshot.child("SHOP").child(shopID).child("LONG").getValue());
+                rating[0] = String.valueOf(dataSnapshot.child("SHOP").child(shopID).child("RATING").getValue());
 
-                }
+                float lat = Float.parseFloat(sharedPreferences.getString("latitude", "null"));
+                float lon = Float.parseFloat(sharedPreferences.getString("longitude", "null"));
+                Log.e("RATING", rating[0]);
+                Log.e("LATITUDE", latitude);
+                Log.e("LONGITUDE", longitude);
 
-                //passes the existing service data to recyclerview setup
-                setupRecyclerView(serviceList);
+                distance[0] = getDistance(lat, lon, Float.parseFloat(latitude), Float.parseFloat(longitude));
+                address[0] = getAddress();
+
+
+
+
+
+                shopNamex = findViewById(R.id.activity_secondary_shop_name);
+                shopAddress = findViewById(R.id.activity_secondary_shop_address);
+                shopDistance = findViewById(R.id.shop_bar_distance);
+                shopRating = findViewById(R.id.shop_bar_rating);
+                shopAddress.setText(address[0]);
+                shopNamex.setText(shopName[0]);
+                shopRating.setText(rating[0]+"*");
+                shopDistance.setText(distance[0].substring(0, Math.min(distance[0].length(), 3)) + "Kms");
+                //setupRecyclerView(mProductList);
                 mRef.removeEventListener(valueEventListener);
-
             }
 
             @Override
@@ -100,24 +126,129 @@ public class ListActivitySecondary extends AppCompatActivity {
 
     }
 
-    /**
-     * passed on the Service list according to shops, into the recyclerview adapter
-     * ListAdapterTwo handles the data into recyclerview in the activity
-     */
+
+
+    private String getDistance(float userLat, float userLong, float lat, float longitude) {
+            Location shopLocation = new Location("");
+            shopLocation.setLatitude(lat);
+            shopLocation.setLongitude(longitude);
+            Location location = new Location("");
+            shopLocation.setLatitude(userLat);
+            shopLocation.setLongitude(userLong);
+            float distance = location.distanceTo(shopLocation);
+            //we also embed the distance in each shop objects just as we calculate them
+            return String.valueOf(distance);
+
+    }
+
+    private String getAddress() {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        return  sharedPreferences.getString("address", "NULL");
+    }
+
+
+    //simply queries for the cart details under USERCART and USERID and shows appropriate preview if data exists
+    ArrayList<Product> cartProducts;
+    ValueEventListener cartValueEventListener;
+    void refreshCartPreview() {
+        // Read from the database
+        cartProducts = new ArrayList<Product>();
+        cartValueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                cartProducts.clear();
+                for (DataSnapshot ds : dataSnapshot.child("USERCART").child(userID).getChildren()) {
+                    for(DataSnapshot snapshot: ds.getChildren()){
+                        String productId = String.valueOf(snapshot.getValue());
+                        String shopId = String.valueOf(ds.getKey());
+                        String productName = String.valueOf(dataSnapshot.child("PRODUCTS").
+                                child(shopId).child(productId).child("NAME").getValue());
+                        String productPrice = String.valueOf(dataSnapshot.child("PRODUCTS").
+                                child(shopId).child(productId).child("PRICE").getValue());
+                        String productThumbURL = String.valueOf(dataSnapshot.child("PRODUCTS").
+                                child(shopId).child(productId).child("THUMBNAILURL").getValue());
+
+                        if(!productId.equals("null")) {
+                            Product p = new Product(productId, productName, productThumbURL, productPrice);
+                            cartProducts.add(p);
+                        }
+
+                    }
+                }
+
+                //cart products are organized into cartPrducts arraylist. now display the data
+                if(!cartProducts.isEmpty()){
+                    TextView cartContent = (TextView) findViewById(R.id.list_secondary_mini_cart_Count);
+                    TextView cartPrice = (TextView) findViewById(R.id.list_secondary_mini_cart_price);
+                    cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
+                    cartView.setVisibility(View.VISIBLE);
+                    String sizeOfCart = String.valueOf(cartProducts.size());
+                    float priceOfCart=0;
+                    for(int i=0;i<cartProducts.size();i++){
+                        priceOfCart += cartProducts.get(i).price;
+                    }
+                    cartContent.setText(String.valueOf(sizeOfCart)+"I T E M S");
+                    cartPrice.setText(String.valueOf(priceOfCart));
+                }
+
+                //mRef.removeEventListener(cartValueEventListener);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+
+    ValueEventListener valueEventListener;
+    Product mProduct;
+    private void retreiveData() {
+        mProductList = new ArrayList<>();
+        // Read from the database
+        valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot ds : dataSnapshot.child("PRODUCTS").child(shopID).getChildren()) {
+                    String productID = (String) ds.getKey();
+                    String productName = String.valueOf(ds.child("NAME").getValue());
+                    String productThumbnailURL = String.valueOf(ds.child("THUMBNAILURL").getValue());
+                    String productPrice = String.valueOf(ds.child("PRICE").getValue());
+                    mProduct = new Product(productID, productName, productThumbnailURL, productPrice);
+                    mProductList.add(mProduct);
+                    lengthCount++;
+                }
+                setupRecyclerView(mProductList);
+                mRef.removeEventListener(valueEventListener);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
+
+    }
+
 
     ListAdapterTwo listAdapter;
-    private void setupRecyclerView(List<Service> serviceListRecycler) {
-        listAdapter = new ListAdapterTwo(serviceListRecycler, new ListAdapterTwo.ClickListener() {
+    private void setupRecyclerView(List<Product> myDataset) {
+        listAdapter = new ListAdapterTwo(myDataset, new ListAdapterTwo.ClickListener() {
             @Override
             public void onPositionClicked(int position) {
-
             }
-
             @Override
             public void onLongClicked(int position) {
-
             }
-        }, this, shopUID);
+        }, this, shopID);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view2);
         mRecyclerView.setHasFixedSize(true);
 
@@ -145,160 +276,29 @@ public class ListActivitySecondary extends AppCompatActivity {
         }));
 
 
-    }
-
-    /**
-     * when plus, minus or add button is pressed in the recyclerview, ListAdapterTwo handles
-     * the list of services and calls this function, to show the mini cartview and updates info
-     *
-     * cartlist is the service arraylist that is passed on from adapter
-     */
-    public void addedToCart(boolean isCalledFromAdapter){
-
-        cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
-        boolean isCartEmpty = listAdapter.isCartEmpty;
-
-        if(!isCartEmpty){
-            //cart is not empty and the cart is shown
-            if(isCalledFromAdapter){
-                if(isCartEnabled){
-                    cartList.clear();
-                    cartList.addAll(listAdapter.returnCart());
-                isCartEnabled=false;
-                }else {
-                    int size = listAdapter.returnCart().size();
-                    Service s = listAdapter.returnCart().get(size-1);
-                    cartList.add(s);
-                }
-
-            }else{
-                cartList.addAll(listAdapter.returnCart());
-
-            }
-            //the contents of cart are shown in the cart mini view. The number of items and total price is mandatory
-            int sizeOfCart = cartList.size();
-            int price=0;
-            for(Service s:cartList){
-                price += s.getPrice();
-            }
-            TextView cartContent = (TextView) findViewById(R.id.list_secondary_mini_cart_Count);
-            TextView cartPrice = (TextView) findViewById(R.id.list_secondary_mini_cart_price);
-            cartContent.setText(String.valueOf(sizeOfCart));
-            cartPrice.setText(String.valueOf(price));
-            cartView.setVisibility(View.VISIBLE);
-
-
-        }else if(isCartEmpty){
-            //the contents of cart are empty, the cart mini view shall be hidden
-
-            cartList.clear();
-            cartView.setVisibility(View.INVISIBLE);
-
-
-        }
-
-    }
-
-
-    /**
-     * loads up the mini cart preview in the bottom and updates relevant info
-     */
-    private void loadCart() {
-
-        cartView = (RelativeLayout) findViewById(R.id.cartViewListSecondary);
-
-
-        //get carlist value from intents
-        int[] priceList = getIntent().getIntArrayExtra("pricelist");
-        String[] nameList = getIntent().getStringArrayExtra("namelist");
-        int size = getIntent().getIntExtra("size", 0);
-        for(int i = 0; i <size; i++){
-            Service s = new Service(nameList[i], priceList[i]);
-            cartList.add(s);
-        }
-
-        //the contents of cart are shown in the cart mini view. The number of items and total price is mandatory
-        int sizeOfCart = cartList.size();
-        Log.e("TAG", String.valueOf(sizeOfCart)
-        );
-        int price=0;
-        for(Service s:cartList){
-            price += s.getPrice();
-        }
-        TextView cartContent = (TextView) findViewById(R.id.list_secondary_mini_cart_Count);
-        TextView cartPrice = (TextView) findViewById(R.id.list_secondary_mini_cart_price);
-        cartContent.setText(String.valueOf(sizeOfCart));
-        cartPrice.setText(String.valueOf(price));
-
-        cartView.setVisibility(View.VISIBLE);
+        updateShopHeader();
 
 
 
     }
 
-
-
-    /**
-     * when the user goes back one level, the user goes to homeactivity with cart data if any exists
-     */
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        Intent backIntent = new Intent(ListActivitySecondary.this, HomeActivity.class);
-        int size;
-        size = cartList.size();
-
-        if(size!=0) {
-            //get the cart list and a boolean true value and pass it onto the backintent
-            int[] priceList = new int[size];
-            String[] nameList = new String[size];
-            for (int i = 0; i < size; i++) {
-                priceList[i] = cartList.get(i).getPrice();
-                nameList[i] = cartList.get(i).getServiceName();
-            }
-
-            Log.e("Cart", "cart data from ListActivitySecondary -> HomeActivity");
-            backIntent.putExtra("openCart", true);
-            backIntent.putExtra("pricelist", priceList);
-            backIntent.putExtra("namelist", nameList);
-            backIntent.putExtra("size", size);
-        }
-
-        //backIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        backIntent.putExtra("SERVICETAG", shopUID);
-        startActivity(backIntent);
-
-        finish();
-    }
-
-
-    /**
-     * when the user presses open cart button in the bottom cart preview
-     * passes the cart list to homeactivity, which then passes data to cartActivity
-     * along with intent extra to openCart = true
-     *
-     */
+   
+    //passes the cart list and the intention to open cart fragment to HomeActivity
     public void openCart(View view) {
         int size;
 
         Intent cartIntent = new Intent(ListActivitySecondary.this, HomeActivity.class);
             cartIntent.putExtra("openCart", true);
-        size = cartList.size();
-        int[] priceList = new int[size];
-            String[] nameList = new String[size];
-            for(int i=0;i<size;i++){
-                priceList[i] = cartList.get(i).getPrice();
-                nameList[i] = cartList.get(i).getServiceName();
-            }
-            cartIntent.putExtra("shopuid", shopUID);
-            cartIntent.putExtra("pricelist", priceList);
-            cartIntent.putExtra("namelist", nameList);
-            cartIntent.putExtra("size", size);
-            cartIntent.putExtra("cartActive", true);
-            cartIntent.putExtra("openCartx", true);
         Log.e("Cart", "cart data from ListActivitySecondary -> homeActivity(CART)");
-
         startActivity(cartIntent);
 
     }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+
+    }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
+
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/barani/Desktop/version_control/tuyu project code-20200202T174213Z-001/tuyu project code/TUYUPARTNER/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "C:\\Users\\kalicharan\\Desktop\\may - Workspace\\TUYUPARTNER\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "/home/barani/.gradle/caches/transforms-2/files-2.1/fb8f7031ef66b8147647717c2aecca12/appcompat-1.1.0/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\kalicharan\\.gradle\\caches\\transforms-2\\files-2.1\\3387fedf7b7ee430aa113e43f8d35cb9\\appcompat-1.1.0\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

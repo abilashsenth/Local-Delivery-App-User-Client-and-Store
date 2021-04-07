@@ -5,11 +5,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -34,13 +36,10 @@ public class TaskActivity extends AppCompatActivity {
     private double longitude;
     private boolean locationPermission;
 
-    String fBaseURL = "https://tuyuservices.firebaseio.com/";
-    FirebaseDatabase mFirebaseDatabase;
-    DatabaseReference mRef;
-    private String TAG = "tag";
-    List<String> numbers;
-    List<Orders> mList;
-    private DatabaseReference databaseReference;
+    DatabaseReference databaseReference;
+    private String TAG = "tag", shopID;
+    List<String> orderIDs;
+    List<Orders> orderList;
     private RecyclerView mRecyclerView;
 
 
@@ -48,55 +47,47 @@ public class TaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-        loggedIn = LoadBool();
+        loggedIn = LoadLoginBool();
         checkLoggedIn();
         checkLocationPermission();
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mRef = mFirebaseDatabase.getReference();
-        //get userID
-        partnerID = LoadID();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        partnerID = sharedPreferences.getString("partnerID", "NULL");
+        shopID = sharedPreferences.getString("shopID", "NULL");
 
-        Log.e("UID is ", partnerID);
+        Log.e("partnerID is ", partnerID);
         if(locationPermission){
             Intent intent = new Intent(TaskActivity.this, MyService.class);
-            intent.putExtra("UID", partnerID);
+            intent.putExtra("partnerID", partnerID);
+            intent.putExtra("shopID", shopID);
             startService(intent);
         }
 
-        numbers = new ArrayList<>();
-        mList = new ArrayList<>();
+        orderIDs = new ArrayList<>();
+        orderList = new ArrayList<>();
 
-        getNumberList();
-        getTasks();
-        //checkDBChange();
-
-
-
+        getOrderIDList();
+        getOrders();
     }
+
+
     ValueEventListener valueEventListener;
-
-
-    private void getNumberList() {
-
+    private void getOrderIDList() {
         // Read from the database
-        valueEventListener = mRef.addValueEventListener(new ValueEventListener() {
+        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(DataSnapshot dataSnapshot) {
                // This method is called once with the initial value and again
                // whenever data at this location is updated.
                for (DataSnapshot ds : dataSnapshot.child("ASSIGNED").getChildren()) {
-                   String number = (String) ds.getKey();
-                   String partnerUID = (String) ds.getValue();
-                   if (partnerUID.equals(partnerID)) {
-                       numbers.add(number);
+                   String orderID = String.valueOf(ds.getKey());
+                   for(DataSnapshot ds1: ds.getChildren()){
+                       if((ds1.getKey().equals(shopID)) && (ds1.child(partnerID).exists())){
+                           orderIDs.add(orderID);
+                       }
                    }
-                   Log.e("NUMBER ORDERS", number);
-
                }
-               mRef.removeEventListener(valueEventListener);
-
-
+               databaseReference.removeEventListener(valueEventListener);
            }
 
            @Override
@@ -107,48 +98,57 @@ public class TaskActivity extends AppCompatActivity {
        });
     }
 
-    Orders orders = new Orders();
-    ValueEventListener valueEventListener1;
-    private void getTasks() {
+    Orders order = new Orders();
+    ArrayList<Orders> ordersArrayList;
+    ArrayList<Product> productArrayList;
+
+    ValueEventListener cartValueEventListener;
+    public void getOrders() {
         // Read from the database
-        valueEventListener1 = mRef.addValueEventListener(new ValueEventListener() {
+        ordersArrayList = new ArrayList<Orders>();
+        productArrayList = new ArrayList<Product>();
+        cartValueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                for (String num : numbers) {
-                    for (DataSnapshot ds : dataSnapshot.child("ORDERSPLACED").child(num).getChildren()) {
-                        String value = (String) ds.getKey();
-                        String price = String.valueOf(ds.getValue());
-                        if (value.equals("NAME")) {
-                            orders.setName(price);
-                        } else if (value.equals("ADDRESS")) {
-                            orders.setAddress(price);
-                        } else if (value.equals("TIME")) {
-                            orders.setTime(price);
-                        } else if (value.equals("DATE")) {
-                            orders.setDate(price);
-                        } else if (value.equals("TIMEPREFERENCE")) {
-                            orders.setTimepreference(price);
-                        } else if (value.equals("SERVICESORDERED")) {
-                            orders.setServicesordered(price);
-                        } else if (value.equals("TOTALAMOUNT")) {
-                            orders.setTotalAmount(price);
-                        }
+                for(String key:orderIDs){
+
+                    for (DataSnapshot ds : dataSnapshot.child("ORDERSPLACED").getChildren()) {
+                            String OID = key;
+
+                        String shopID = String.valueOf(ds.child("SHOPID").getValue());
+                        Log.e("ORDERTAGG", shopID);
+
+                        String status = String.valueOf(ds.child("STATUS").getValue());
+
+                            String name = String.valueOf(ds.child("NAME").getValue());
+                            String number = String.valueOf(ds.child("NUMBER").getValue());
+                            String address = String.valueOf(ds.child("ADDRESS").getValue());
+                            String date = String.valueOf(ds.child("DATE").getValue());
+                            String time = String.valueOf(ds.child("TIME").getValue());
+                            String timePreference = String.valueOf(ds.child("TIMEPREFERENCE").getValue());
+                            String totalAmount = String.valueOf(ds.child("TOTALAMOUNT").getValue());
+                            String paymentMethod = String.valueOf(ds.child("PAYMENTMETHOD").getValue());
+                        String latitude = String.valueOf(ds.child("LATITUDE").getValue());
+                        String longitude = String.valueOf(ds.child("LONGITUDE").getValue());
+
+                        String totalProducts = "";
+                            StringBuilder sb = new StringBuilder();
+
+                            for (DataSnapshot p : ds.child("ORDERS").getChildren()) {
+                                String productName = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("NAME").getValue());
+                                String productPrice = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("PRICE").getValue());
+                                String productThumbnailURL = String.valueOf(dataSnapshot.child("PRODUCTS").child(shopID).child(String.valueOf(p.getValue())).child("THUMBNAILURL").getValue());
+                                Log.e("PRODUCTNAME", String.valueOf(p.getValue()));
+                                totalProducts = sb.append(productName+"/-/ ").toString();
+                            }
+                            order = new Orders(OID, shopID, status, name, number, address, date, time, timePreference, totalAmount, paymentMethod, totalProducts, latitude, longitude);
+                            ordersArrayList.add(order);
 
                     }
-                    orders.setNumber(String.valueOf(num));
-                    Log.e("num", num);
-                    mList.add(orders);
-                    orders = new Orders();
+
                 }
-
-
-                mRef.removeEventListener(valueEventListener1);
-                setupCustomRecyclerView(mList);
-
-
-
+                setupOrdersRecyclerView(ordersArrayList);
+                databaseReference.removeEventListener(cartValueEventListener);
             }
 
             @Override
@@ -160,31 +160,26 @@ public class TaskActivity extends AppCompatActivity {
     }
 
 
+
     /**
      *the recyclerview setup of the first list where the recyclerview contains an image and title
      *
      **/
 
-
-    ListAdapter listAdapter;
-
-    public void setupCustomRecyclerView(List<Orders> list) {
-        listAdapter = new ListAdapter(list);
+    ListAdapterStatusResponse listAdapterStatusResponse;
+    public void setupOrdersRecyclerView(List<Orders> ordersList) {
+        listAdapterStatusResponse = new ListAdapterStatusResponse(ordersList, getApplicationContext());
         mRecyclerView = (RecyclerView) findViewById(R.id.ordersRecyclerView);
         mRecyclerView.setHasFixedSize(true);
-
-
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-
-        mRecyclerView.setAdapter(listAdapter);
+        mRecyclerView.setAdapter(listAdapterStatusResponse);
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 // Write your code here
                 //pass servicetag and then the string[position]
-                Log.e("Tag", " " + position);
+                Log.e("TASKACTIVITY RCLR", " " + position);
                 startResponseActivity(position);
             }
 
@@ -199,7 +194,7 @@ public class TaskActivity extends AppCompatActivity {
 
     private void startResponseActivity(int position) {
         //position corresponds to the position of mList which was chosen;
-        Orders mOrder = mList.get(position);
+        Orders mOrder = ordersArrayList.get(position);
         Intent responseIntent  =new Intent(TaskActivity.this, StatusResponseActivity.class);
         responseIntent.putExtra("Orders", mOrder);
         startActivity(responseIntent);
@@ -212,39 +207,16 @@ public class TaskActivity extends AppCompatActivity {
             Intent loginIntent = new Intent(TaskActivity.this, LoginActivity.class);
             startActivity(loginIntent);
             Toast.makeText(getApplicationContext(), "please login to continue", Toast.LENGTH_SHORT).show();
-
         }
-        //the user is logged in and ready to continue
-
-
-
-
     }
 
 
-    public boolean LoadBool(){
+    public boolean LoadLoginBool(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         return  sharedPreferences.getBoolean("login", false);
     }
 
-    public String LoadID(){
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        return  sharedPreferences.getString("UID", "NULL");
-    }
 
-    public void partnerLogoutClick(View view) {
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("login", false);
-        editor.apply();
-        loggedIn = false;
-        stopService(new Intent(TaskActivity.this,MyService.class));
-
-        checkLoggedIn();
-
-
-
-    }
 
 
 
@@ -289,8 +261,22 @@ public class TaskActivity extends AppCompatActivity {
     }
 
 
+
+    //misc
     public void refreshButton(View v){
         recreate();
+    }
+
+    public void partnerProfile(View view) {
+        Intent intent = new Intent(TaskActivity.this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
+    public void dialUserIntent(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null));
+        startActivity(intent);
     }
 
 }

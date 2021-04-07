@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 
 import javax.annotation.Nullable;
 
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
+
 public class CartFragment extends Fragment {
 
     @Nullable

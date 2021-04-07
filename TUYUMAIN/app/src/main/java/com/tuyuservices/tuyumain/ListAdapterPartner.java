@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+/* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 public class ListAdapterPartner extends RecyclerView.Adapter<ListAdapterPartner.MyViewHolder> {
 
@@ -34,6 +35,7 @@ public class ListAdapterPartner extends RecyclerView.Adapter<ListAdapterPartner.
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_type_two, parent, false);
+        /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
         return new MyViewHolder(itemView);
     }
@@ -42,7 +44,7 @@ public class ListAdapterPartner extends RecyclerView.Adapter<ListAdapterPartner.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //TODO add image bitmap
         Partner partner = partners.get(position);
-        holder.name.setText(partner.getUID());
+        holder.name.setText(partner.getName());
 
 
         // holder.displayImage.setImageURI(Uri.parse(order.getImageUri()));
@@ -52,6 +54,7 @@ public class ListAdapterPartner extends RecyclerView.Adapter<ListAdapterPartner.
     public int getItemCount() {
         return partners.size();
     }
+    /* © 2020 All rights reserved. abilash432@gmail.com/@thenextbiggeek® Extending to Water360*/
 
 
 
