@@ -47,3 +47,14 @@ Delivery partner app has following features:
 - rate the customer experience
 
 UI is still not perfect for a delivery app, but its minimal effort, since the entire system is built from scratch and is working perfectly
+
+# Sample Implementation of A Water Bottle Delivery System utilizing my framework
+
+<a href="url"><img src="https://i.imgur.com/DdUjq4m.png" align="center" height="500" width="240" ></a>
+<a href="url"><img src="https://i.imgur.com/V0RWnRl.png" align="center" height="500" width="240" ></a>
+<a href="url"><img src="https://i.imgur.com/8GJCawg.png" align="center" height="500" width="240" ></a>
+<a href="url"><img src="https://i.imgur.com/g9u4pUU.png" align="center" height="500" width="240" ></a>
+<a href="url"><img src="https://i.imgur.com/EMsKq86.png" align="center" height="500" width="240" ></a>
+
+
+
